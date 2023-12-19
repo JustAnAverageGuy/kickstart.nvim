@@ -1,6 +1,6 @@
 return {
   "xeluxee/competitest.nvim",
-  -- lazy = false,
+  lazy = true,
   dependencies = { 'MunifTanjim/nui.nvim', },
   opts = {},
 }
