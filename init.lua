@@ -299,6 +299,9 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   group = highlight_group,
   pattern = '*',
 })
+-- [[ Other Keymaps ]]
+vim.keymap.set('i', '<C-s>', '<C-o>:update<CR>') -- ctrl s saves the file in insert mode
+
 
 -- [[ Configure Telescope ]]
 -- See `:help telescope` and `:help telescope.setup()`
@@ -389,7 +392,7 @@ vim.defer_fn(function()
     ensure_installed = { 'c', 'cpp', 'lua', 'python', 'javascript', 'typescript', 'vimdoc', 'vim', 'bash' },
 
     -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
-    auto_install = false,
+    auto_install = true,
 
     highlight = { enable = true },
     indent = { enable = true },
@@ -528,8 +531,8 @@ require('mason-lspconfig').setup()
 local servers = {
   -- clangd = {},
   -- gopls = {},
-  pyright = { python = { analysis = { typeCheckingMode = "basic" } } },
-  pylsp   = {
+  -- pyright = { python = { analysis = { typeCheckingMode = "basic" } } },
+  pylsp  = {
     pylsp = {
       plugins = {
         autopep8 = { enabled = false },
@@ -542,7 +545,7 @@ local servers = {
   -- tsserver = {},
   -- html = { filetypes = { 'html', 'twig', 'hbs'} },
 
-  lua_ls  = {
+  lua_ls = {
     Lua = {
       workspace = { checkThirdParty = false },
       telemetry = { enable = false },
