@@ -16,7 +16,7 @@ return {
 		evaluate_template_modifiers = true,
 	},
 	keys = {
-		{ { "n", "i" }, "<cmd>CompetiTest run<cr>", desc = "CompetiTest run the testcases" },
+		{ "<M-C-B>", "<cmd>CompetiTest run<cr>", { "n", "i" }, desc = "CompetiTest run the testcases" },
 	}
 }
 

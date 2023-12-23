@@ -301,11 +301,6 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 })
 
 -- [[ Custom Keymaps/Keybinds ]]
-local function load_competitest_and_run_the_current_file()
-  error("Not Completely Implemented", 2)
-  require("lazy").load { "competitest.nvim" }
-  vim.cmd(':CompetiTest run')
-end
 
 vim.keymap.set('i', '<C-s>', '<C-o>:update<CR>') -- ctrl s saves the file in insert mode
 -- vim.keymap.set({ 'i', 'n' }, '<M-C-B>', -- load_competitest_and_run_the_current_file)
