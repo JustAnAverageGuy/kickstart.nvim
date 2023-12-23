@@ -4,6 +4,7 @@ return {
 	dependencies = { 'MunifTanjim/nui.nvim', },
 	opts = {
 		companion_port = 12172,
+		runner_ui = { interface = "split" },
 		run_command = {
 			python = { exec = 'pypy', args = { "$(FNAME)" } },
 		},
@@ -14,6 +15,9 @@ return {
 		},
 		evaluate_template_modifiers = true,
 	},
+	keys = {
+		{ { "n", "i" }, "<cmd>CompetiTest run<cr>", desc = "CompetiTest run the testcases" },
+	}
 }
 
 --[[
