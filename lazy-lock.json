@@ -2,6 +2,7 @@
   "Colorizer": { "branch": "master", "commit": "d4c0ed69ee7e91e42d31e214b236f8a31fc74dd2" },
   "Comment.nvim": { "branch": "master", "commit": "0236521ea582747b58869cb72f70ccfa967d2e89" },
   "LuaSnip": { "branch": "master", "commit": "57c9f5c31b3d712376c704673eac8e948c82e9c1" },
+  "accelerated-jk": { "branch": "master", "commit": "156c5158b72059404f6b8aaf15b59f87dd0aaa88" },
   "catppuccin": { "branch": "main", "commit": "079500a625f3ae5aa6efb758f1a17fe4c7a57e52" },
   "cmp-nvim-lsp": { "branch": "main", "commit": "5af77f54de1b16c34b23cba810150689a3a90312" },
   "cmp-path": { "branch": "main", "commit": "91ff86cd9c29299a64f968ebb45846c485725f23" },

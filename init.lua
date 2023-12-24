@@ -164,6 +164,23 @@ require('lazy').setup({
         -- component_separators = '|',
         -- section_separators = '',
       },
+      extensions = {
+        {
+          filetypes = { 'CompetiTest' },
+          sections = {
+            lualine_b = { function()
+              return vim.b.competitest_title or 'CompetiTest'
+            end },
+            lualine_y = { 'searchcount' },
+            lualine_z = { lineinfo },
+          },
+          inactive_sections = {
+            lualine_b = { function()
+              return vim.b.competitest_title or 'CompetiTest'
+            end },
+          },
+        } -- CompetiTest statusline
+      }
     },
   },
 
@@ -304,7 +321,6 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 
 vim.keymap.set('i', '<C-s>', '<C-o>:update<CR>') -- ctrl s saves the file in insert mode
 -- vim.keymap.set({ 'i', 'n' }, '<M-C-B>', -- load_competitest_and_run_the_current_file)
-
 
 -- [[ Configure Telescope ]]
 -- See `:help telescope` and `:help telescope.setup()`
