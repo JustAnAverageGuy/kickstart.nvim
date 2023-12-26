@@ -1,4 +1,5 @@
 {
+  "CodeForce.vim": { "branch": "master", "commit": "09f3c16d0c6a73e4ccaf69beeb25e0d260b10310" },
   "Colorizer": { "branch": "master", "commit": "d4c0ed69ee7e91e42d31e214b236f8a31fc74dd2" },
   "Comment.nvim": { "branch": "master", "commit": "0236521ea582747b58869cb72f70ccfa967d2e89" },
   "LuaSnip": { "branch": "master", "commit": "57c9f5c31b3d712376c704673eac8e948c82e9c1" },
