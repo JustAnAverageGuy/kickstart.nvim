@@ -560,13 +560,24 @@ require('mason-lspconfig').setup()
 local servers = {
   -- clangd = {},
   -- gopls = {},
-  -- pyright = { python = { analysis = { typeCheckingMode = "basic" } } },
-  pylsp  = {
+  pyright = {
+    python = {
+      analysis = {
+        -- typeCheckingMode = "basic",
+        -- autoImportCompletions =  false,
+      }
+    }
+  },
+  pylsp   = {
     pylsp = {
       plugins = {
         autopep8 = { enabled = false },
         pycodestyle = { enabled = false },
         pyflakes = { enabled = false },
+        -- rope_autoimport = {
+        --   enabled = true,
+        --   completions = { enabled = true },
+
       }
     }
   },
