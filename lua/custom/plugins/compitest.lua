@@ -14,7 +14,7 @@ return {
 			py = "~/codin/cp/python_template.py"
 		},
 		evaluate_template_modifiers = true,
-		date_format = '%A %d %B %Y %H-%M-%S %z',
+		date_format = '%A %d %B %Y %H:%M:%S %z',
 		split_ui = {
 			total_width = 0.45,
 			vertical_layout = {
