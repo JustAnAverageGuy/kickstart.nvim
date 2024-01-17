@@ -319,8 +319,8 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 
 -- [[ Custom Keymaps/Keybinds ]]
 
-vim.keymap.set('i', '<C-s>', '<C-o>:update<CR>') -- ctrl s saves the file in insert mode
--- vim.keymap.set({ 'i', 'n' }, '<M-C-B>', -- load_competitest_and_run_the_current_file)
+vim.keymap.set('i', '<C-s>', '<C-o>:update<CR>', {desc="Save file with ctrl-s when in insert mode"}) -- ctrl s saves the file in insert mode
+vim.keymap.set({'n'}, '<leader>cp', '<cmd>%y+<CR>',{desc="Copy file contents to system clipboard"})
 
 -- [[ Configure Telescope ]]
 -- See `:help telescope` and `:help telescope.setup()`
