@@ -190,7 +190,11 @@ require('lazy').setup({
     -- Enable `lukas-reineke/indent-blankline.nvim`
     -- See `:help ibl`
     main = 'ibl',
-    opts = { indent = { char = '┋' } },
+    opts = { 
+      indent = { 
+        char = '┋' 
+      } 
+    },
   },
 
   -- "gc" to comment visual regions/lines
@@ -284,11 +288,8 @@ vim.o.completeopt     = 'menuone,noselect'
 -- NOTE: You should make sure your terminal supports this
 vim.o.termguicolors   = true
 
--- Set indentation
+-- Use spaces
 vim.o.expandtab       = true
-vim.o.tabstop         = 4
-vim.o.softtabstop     = 0
-vim.o.shiftwidth      = 0
 
 -- [[ Basic Keymaps ]]
 
@@ -590,7 +591,7 @@ local servers = {
       workspace = { checkThirdParty = false },
       telemetry = { enable = false },
       -- NOTE: toggle below to ignore Lua_LS's noisy `missing-fields` warnings
-      -- diagnostics = { disable = { 'missing-fields' } },
+      diagnostics = { disable = { 'missing-fields' } },
     },
   },
 }
