@@ -29,6 +29,11 @@ vim.opt.rtp:prepend(lazypath)
 --
 --  You can also configure plugins after the setup call,
 --    as they will be available in your neovim runtime.
+
+-- NOTE: https://github.com/folke/neodev.nvim/issues/98#issuecomment-1778364644
+-- require('lazy').setup({'folke/neodev.nvim'})
+-- require('neodev').setup()
+
 require('lazy').setup({
   -- NOTE: First, some plugins that don't require any configuration
 
@@ -190,10 +195,10 @@ require('lazy').setup({
     -- Enable `lukas-reineke/indent-blankline.nvim`
     -- See `:help ibl`
     main = 'ibl',
-    opts = { 
-      indent = { 
-        char = '┋' 
-      } 
+    opts = {
+      indent = {
+        char = '┋'
+      }
     },
   },
 
@@ -204,6 +209,13 @@ require('lazy').setup({
   {
     'nvim-telescope/telescope.nvim',
     branch = '0.1.x',
+    opts = {
+      pickers = {
+        colorscheme = {
+          enable_preview = true,
+        }
+      }
+    },
     dependencies = {
       'nvim-lua/plenary.nvim',
       -- Fuzzy Finder Algorithm which requires local dependencies to be built.
@@ -474,6 +486,9 @@ require('which-key').register({
   ['<leader>h'] = { 'Git [H]unk' },
 }, { mode = 'v' })
 
+-- Setup neovim lua configuration
+require('neodev').setup()
+
 -- mason-lspconfig requires that these setup functions are called in this order
 -- before setting up the servers.
 require('mason').setup()
@@ -525,8 +540,6 @@ local servers = {
   },
 }
 
--- Setup neovim lua configuration
-require('neodev').setup()
 
 -- nvim-cmp supports additional completion capabilities, so broadcast that to servers
 local capabilities = vim.lsp.protocol.make_client_capabilities()

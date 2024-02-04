@@ -13,9 +13,13 @@ return {
         "rcarriga/nvim-notify",
         "nvim-tree/nvim-web-devicons",
     },
-    opts = {
-        lang = 'python3',
-        arg = leet_arg,
-        directory = vim.fn.getcwd(),
-    },
+    config = function()
+        require("leetcode").setup({
+            lang = 'python3',
+            arg = leet_arg,
+            directory = vim.fn.getcwd(),
+        });
+        vim.keymap.set('n', '<M-C-B>', '<cmd>Leet test<CR>');
+        vim.keymap.set('n', '<M-C-S>', '<cmd>Leet submit<CR>');
+    end,
 }
