@@ -4,11 +4,27 @@ return {
 	dependencies = { 'MunifTanjim/nui.nvim' },
 	opts = {
 		companion_port = 12172,
-		runner_ui = { interface = "split" },
+		runner_ui = {
+			interface = "split",
+			mappings = {
+				run_all_again = "<M-C-B>"
+			}
+		},
 		run_command = {
 			python = { exec = 'pypy', args = { "$(FNAME)" } },
 		},
 		received_files_extension = "py",
+		received_problems_path = function(task, file_extension)
+			-- local default_path = "$(CWD)/$(PROBLEM).$(FEXT)";
+			local beginning = require("competitest.receive").eval_receive_modifiers("$(CWD)/", task,
+				file_extension, true);
+			local problem_name_with_spaces = require("competitest.receive").eval_receive_modifiers(
+			"$(PROBLEM)", task, file_extension, true) or "this_didnt_match_problem_name";
+			local problem_name_without_spaces = string.gsub(problem_name_with_spaces, '[<>:"/\\|?* %.]', "_"); -- strips out spaces and other special characters and replaces them with underscores
+			-- assert(vim.fn.has("win32") ~= 1, "The received problem path will be wrong");
+			-- WARN: This should not be a problem since paths are handled by lua, so using '/' even in windows etc should work
+			return beginning .. problem_name_without_spaces .. '.' .. file_extension
+		end,
 		testcases_directory = "./testcases/",
 		template_file = {
 			py = "~/codin/cp/python_template.py"
