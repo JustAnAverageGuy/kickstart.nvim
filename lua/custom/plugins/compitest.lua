@@ -20,7 +20,7 @@ return {
 				file_extension, true);
 			local problem_name_with_spaces = require("competitest.receive").eval_receive_modifiers(
 			"$(PROBLEM)", task, file_extension, true) or "this_didnt_match_problem_name";
-			local problem_name_without_spaces = string.gsub(problem_name_with_spaces, '[<>:"/\\|?* %.]', "_"); -- strips out spaces and other special characters and replaces them with underscores
+			local problem_name_without_spaces = string.gsub(problem_name_with_spaces, '[<>:"/\\|?* %.-]', "_"); -- strips out spaces and other special characters and replaces them with underscores
 			-- assert(vim.fn.has("win32") ~= 1, "The received problem path will be wrong");
 			-- WARN: This should not be a problem since paths are handled by lua, so using '/' even in windows etc should work
 			return beginning .. problem_name_without_spaces .. '.' .. file_extension
@@ -55,6 +55,24 @@ return {
 		"CompetiTest"
 	},
 	keys = {
+		{
+			"<leader>re",
+			"<cmd>CompetiTest receive problem<cr>",
+			{ "n", },
+			desc = "CompetiTest receive problem",
+		},
+		{
+			"<leader>ad",
+			"<cmd>CompetiTest add_testcase<cr>",
+			{"n"},
+			desc = "CompetiTest add custom testcases"
+		},
+		{
+			"<leader>ck",
+			"<cmd>CompetiTest run<cr>",
+			{ "n" },
+			desc = "CompetiTest run the testcases",
+		},
 		{
 			"<M-C-B>",
 			"<cmd>CompetiTest run<cr>",
