@@ -15,8 +15,7 @@
 	// 	],
 	// 	"description": "Log output to console"
 	// }
-	"saitama": {
-		"prefix": "OK",
+	"saitama": { "prefix": "OK",
 		"body": [
 		  "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",
 		  "⠀⠀⠀⠀⣠⣶⡾⠏⠉⠙⠳⢦⡀⠀⠀⠀⢠⠞⠉⠙⠲⡀⠀",
@@ -36,7 +35,7 @@
 		"description": "saitama"
 	  },
 	  "unlucky_skeleton": {
-		"prefix": "unlucky",
+		"prefix": "Unlucky",
 		"body": [
 		  "⠀⠀⢀⣤⣶⣶⣤⣄⡀",
 		  "⠀⢀⣿⣿⣿⣿⣿⣿⣿⡆",
@@ -176,7 +175,7 @@
 		"description": "pasties"
 	  },
 	  "jiiii": {
-		"prefix": "stare",
+		"prefix": "Stare",
 		"body": [
 		  "⠄⣾⣿⡇⢸⣿⣿⣿⠄⠈⣿⣿⣿⣿⠈⣿⡇⢹⣿⣿⣿⡇⡇⢸⣿⣿⡇⣿⣿⣿",
 		  "⢠⣿⣿⡇⢸⣿⣿⣿⡇⠄⢹⣿⣿⣿⡀⣿⣧⢸⣿⣿⣿⠁⡇⢸⣿⣿⠁⣿⣿⣿",
@@ -197,7 +196,7 @@
 		"description": "jii~"
 	  },
 	  "bruh_moment": {
-		"prefix": "bruh",
+		"prefix": "Bruh",
 		"body": [
 		  "⡏⠉⠉⠉⠉⠉⠉⠋⠉⠉⠉⠉⠉⠉⠋⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠙⠉⠉⠉⠹",
 		  "⡇⢸⣿⡟⠛⢿⣷⠀⢸⣿⡟⠛⢿⣷⡄⢸⣿⡇⠀⢸⣿⡇⢸⣿⡇⠀⢸⣿⡇⠀",
@@ -223,7 +222,7 @@
 		"description": "bruh_moment"
 	  },
 	  "bruh_moment": {
-		"prefix": "pentagram",
+		"prefix": "Pentagram",
 		"body": [
 		  "⠄⠄⠄⠄⠄⠄⠄⠄⣀⣤⡴⠶⠟⠛⠛⠛⠛⠻⠶⢦⣤⣀⠄⠄⠄⠄⠄⠄⠄⠄",
 		  "⠄⠄⠄⠄⠄⣠⣴⡟⠋⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠈⠙⢻⣦⣄⠄⠄⠄⠄⠄",
@@ -244,7 +243,7 @@
 		"description": "pentagram"
 	  },
 	  "UwU": {
-		"prefix": "uwu",
+		"prefix": "Uwu",
 		"body": [
 		  "⡆⣐⢕⢕⢕⢕⢕⢕⢕⢕⠅⢗⢕⢕⢕⢕⢕⢕⢕⠕⠕⢕⢕⢕⢕⢕⢕⢕⢕⢕",
 		  "⢐⢕⢕⢕⢕⢕⣕⢕⢕⠕⠁⢕⢕⢕⢕⢕⢕⢕⢕⠅⡄⢕⢕⢕⢕⢕⢕⢕⢕⢕",
@@ -264,7 +263,7 @@
 		"description": "UwU"
 	  },
 	  "ubuntu_logo": {
-		"prefix": "ubuntu",
+		"prefix": "Ubuntu",
 		"body": [
 		  "⣿⣿⣿⣿⣿⣿⣿⣿⠿⠛⠋⠉⠁⠀⠀⠀⠀⠈⠉⠙⠛⠿⣿⣿⣿⣿⣿⣿⣿⣿",
 		  "⣿⣿⣿⣿⣿⠿⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⠿⣿⣿⣿⣿⣿",
@@ -316,7 +315,7 @@
 		"description": "any_losers, bunny_girl"
 	  },
 	  "running tests": {
-		"prefix": "99",
+		"prefix": "Runn",
 		"body": [
 		  "RUNNING TESTS",
 		  "▇▇▇▇▇▇▇▇▇▇▇▇▇▇▢",
@@ -328,7 +327,7 @@
 		"description": "running tests"
 	  },
 	  "gigachad says": {
-		"prefix": "giga",
+		"prefix": "Giga",
 		"body": [
 		  "⠀⠀⠘⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡜⠀⠀⠀",
 		  "⠀⠀⠀⠑⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡔⠁⠀⠀⠀",
@@ -365,7 +364,7 @@
 		"description": "gigachad says"
 	  },
 	  "oh so you are approaching me": {
-		"prefix": "approaching",
+		"prefix": "JOJO",
 		"body": [
 		  "⣿⣿⣿⣿⣿⣿⣿⡿⡛⠟⠿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿",
 		  "⣿⣿⣿⣿⣿⣿⠿⠨⡀⠄⠄⡘⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿",
@@ -385,7 +384,7 @@
 		"description": "oh so you are approaching me"
 	  },
 	  "chika happy": {
-		"prefix": "chika",
+		"prefix": "Chika",
 		"body": [
 		  "⢸⣿⣿⣿⣿⠃⠄⢀⣴⡾⠃⠄⠄⠄⠄⠄⠈⠺⠟⠛⠛⠛⠛⠻⢿⣿⣿⣿⣿⣶⣤⡀⠄",
 		  "⢸⣿⣿⣿⡟⢀⣴⣿⡿⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣸⣿⣿⣿⣿⣿⣿⣿⣷",
@@ -406,7 +405,7 @@
 		"description": "chika happy"
 	  },
 	  "bongocat": {
-		"prefix": "bcat",
+		"prefix": "Bcat",
 		"body": [
 		  "⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣿⣶⣄⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",
 		  "⠀⠀⠀⠀⠀⠀⠀⢀⣴⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⣦⣄⣀⡀⣠⣾⡇⠀⠀⠀⠀",
@@ -419,7 +418,7 @@
 		"description": "bongocat"
 	  },
 	  "unsettled tom": {
-		"prefix": "wtf",
+		"prefix": "Wtf",
 		"body": [
 		  "⣿⣷⡶⠚⠉⢀⣤⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠋⠠⣴⣿⣿⣿⣿⣶⣤⣤⣤",
 		  "⠿⠥⢶⡏⣸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠋⢀⣴⣷⣌⢿⣿⣿⣿⣿⣿⣿⣿",
@@ -437,7 +436,7 @@
 		"description": "unsettled tom"
 	  },
 	  "hitoribocchi": {
-		"prefix": "hmm",
+		"prefix": "Hmm",
 		"body": [
 		  "⠉⠉⠉⢉⠉⢹⡿⣿⢿⣟⡿⣿⢿⡿⣿⢿⣿⢿⡿⣿⢿⣻⡿⣿⢿⡿⣟⣿⢿⡻⣟⣿⣻⡟⣿⢻⣟⣻⣛⢯⡻⡍⠏⠉⠉⠉⡉⠍⠉⠉",
 		  "⠀⠄⠁⠠⠈⣶⢿⣯⢿⣞⡿⣽⣯⢿⣽⣻⢾⣯⢿⡽⣯⢷⣻⡽⣯⢿⡽⣞⣯⣳⣟⡾⡅⢿⡝⣷⢮⡳⣯⢼⡱⣏⠥⡈⠀⠀⡐⠂⠀⠀",
@@ -462,7 +461,7 @@
 		"description": "hitoribocchi"
 	  },
 	  "hitoribocchi": {
-		"prefix": "yay",
+		"prefix": "Yay",
 		"body": [
 		  "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡤⢶⣭⢯⣽⣯⣟⣿⣻⣟⡿⣯⣿⣭⣷⣣⢆⣄⠀⠀⠀⠀⠀⠀⢀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",
 		  "⠀⠀⠀⠀⠀⠀⡀⠀⡀⠄⠀⠀⠀⠀⠄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠠⠐⠀⠈⢀⠠⠀⠀⠁⠀⠂⠀⠀⣠⢾⡽⣾⣟⣾⢿⣻⣾⣽⡾⣷⣻⣟⣷⢿⣞⣷⢿⣻⣮⣝⢦⡀⠀⠁⠠⠀⠄⠀⠂⢀⠂⠄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠀⡀⠀⢀⠀⠀⡀⠠⠀⠀",
@@ -494,7 +493,7 @@
 		"description": "hitoribocchi"
 	  },
 	  "jojo menacing": {
-		"prefix": "gogo",
+		"prefix": "Gogo",
 		"body": [
 		  "⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣀⡀⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄",
 		  "⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣴⣿⣿⠿⣫⣥⣄⠄⠄⠄⠄⠄⠄⠄⠄⠄",
@@ -512,7 +511,7 @@
 		"description": "jojo menacing"
 	  },
 	  "ezclap": {
-		"prefix": "hecks",
+		"prefix": "Hecks",
 		"body": [
 		  "⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⠿⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿",
 		  "⣿⣿⣿⣿⣿⣿⣿⠛⢩⣴⣶⣶⣶⣌⠙⠫⠛⢋⣭⣤⣤⣤⣤⡙⣿⣿⣿⣿⣿⣿",
@@ -533,7 +532,7 @@
 		"description": "EZ clap"
 	  },
 	  "saitama pfp": {
-		"prefix": "pfp",
+		"prefix": "Pfp",
 		"body": [
 		  "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡴⢋⠵⠉⠀⠀⠀⡠⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠳⣄⠀⠀⠀⠀⠀⠀⠀⠀",
 		  "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡠⠋⠀⡎⠀⠀⡀⠔⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢢⡀⠀⠀⠀⠀⠀⠀",
@@ -568,7 +567,7 @@
 		"description": "saitama pfp"
 	  },
 	  "donut shaped donut.py": {
-		"prefix": "donut",
+		"prefix": "Donut",
 		"body": [
 		  "while ('o_' in dir()) or (A := (0)",
 		  "               ) or (B := 0) or print((                           ",
