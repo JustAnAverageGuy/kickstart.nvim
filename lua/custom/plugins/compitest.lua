@@ -7,7 +7,7 @@ return {
 		runner_ui = {
 			interface = "split",
 			mappings = {
-				run_all_again = "<M-C-B>"
+				run_all_again = "<leader>ck"
 			}
 		},
 		run_command = {
