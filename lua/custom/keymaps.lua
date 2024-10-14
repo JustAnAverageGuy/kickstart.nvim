@@ -29,6 +29,8 @@ vim.keymap.set({'n'}, '<leader>cp', '<cmd>%y+<CR>',{desc="Copy file contents to 
 
 vim.api.nvim_create_user_command("W", "write", {}) -- avoid typos
 
+vim.keymap.set({'v', 'n'}, '<leader>y', '"+y', {desc="Yank into system clipboard"})
+
 -- move lines using J, K in visual mode
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
