@@ -230,7 +230,7 @@ require('lazy').setup({
               return vim.b.competitest_title or 'CompetiTest'
             end },
             lualine_y = { 'searchcount' },
-            lualine_z = { lineinfo },
+            lualine_z = { "change this sometime" },
           },
           inactive_sections = {
             lualine_b = { function()
@@ -562,6 +562,8 @@ local servers = {
       }
     }
   },
+
+
   -- rust_analyzer = {},
   -- tsserver = {},
   -- html = { filetypes = { 'html', 'twig', 'hbs'} },

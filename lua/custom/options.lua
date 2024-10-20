@@ -43,4 +43,11 @@ vim.o.termguicolors   = true
 -- Use spaces
 vim.o.expandtab       = true
 
+-- Open help window in a vertical split to the right.
+-- TODO place this in proper autocommands place, but this will do for now ig 
+vim.api.nvim_create_autocmd("FileType", {
+    group = vim.api.nvim_create_augroup("help_window_right", {}),
+    pattern = { "man", "help" },
+    callback = function() vim.cmd.wincmd("L") end
+})
 
