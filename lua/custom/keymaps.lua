@@ -24,18 +24,18 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 })
 
 -- [[ Custom Keymaps/Keybinds ]]
-vim.keymap.set('i', '<C-s>', '<C-o>:update<CR>', {desc="Save file with ctrl-s when in insert mode"}) -- ctrl s saves the file in insert mode
-vim.keymap.set({'n'}, '<leader>cp', '<cmd>%y+<CR>',{desc="Copy file contents to system clipboard"})
+vim.keymap.set('i', '<C-s>', '<C-o>:update<CR>', { desc = "Save file with ctrl-s when in insert mode" }) -- ctrl s saves the file in insert mode
+vim.keymap.set({ 'n' }, '<leader>cp', '<cmd>%y+<CR>', { desc = "Copy file contents to system clipboard" })
 
 vim.api.nvim_create_user_command("W", "write", {}) -- avoid typos
 
-vim.keymap.set({'v', 'n'}, '<leader>y', '"+y', {desc="Yank into system clipboard"})
 
 -- move lines using J, K in visual mode
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
--- when in visual mode leader pu replaces the selection with yanked text without losing the yank
-vim.keymap.set("x", "<leader>pu", [["_dP]])
-vim.keymap.set({"n", "v"}, "<leader>du", [["_d]]) -- deletes into the void register
+vim.keymap.set({ 'v', 'n' }, '<leader>y', '"+y', { desc = "Yank into system clipboard" })
 
+-- when in visual mode leader p replaces the selection with yanked text without losing the yank
+vim.keymap.set("x", "<leader>p", [["_dP]])
+vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]]) -- deletes into the void register
