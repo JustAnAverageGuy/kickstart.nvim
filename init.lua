@@ -541,31 +541,32 @@ require('mason-lspconfig').setup()
 local servers = {
   -- clangd = {},
   -- gopls = {},
-  pyright = {
-    python = {
+
+  -- pylsp   = {
+  --   pylsp = {
+  --     plugins = {
+  --       autopep8 = { enabled = false },
+  --       pycodestyle = { enabled = false },
+  --       pyflakes = { enabled = false },
+  --       -- rope_autoimport = {
+  --       --   enabled = true,
+  --       --   completions = { enabled = true },
+  --
+  --     }
+  --   }
+  -- },
+
+  basedpyright = {
+    basedpyright = {
       analysis = {
         -- typeCheckingMode = "basic",
         -- autoImportCompletions =  false,
       }
     }
   },
-  pylsp   = {
-    pylsp = {
-      plugins = {
-        autopep8 = { enabled = false },
-        pycodestyle = { enabled = false },
-        pyflakes = { enabled = false },
-        -- rope_autoimport = {
-        --   enabled = true,
-        --   completions = { enabled = true },
-
-      }
-    }
-  },
-
 
   -- rust_analyzer = {},
-  -- tsserver = {},
+  ts_ls = {},
   -- html = { filetypes = { 'html', 'twig', 'hbs'} },
 
   lua_ls  = {
