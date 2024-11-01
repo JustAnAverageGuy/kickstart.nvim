@@ -542,24 +542,24 @@ local servers = {
   -- clangd = {},
   -- gopls = {},
 
-  -- pylsp   = {
-  --   pylsp = {
-  --     plugins = {
-  --       autopep8 = { enabled = false },
-  --       pycodestyle = { enabled = false },
-  --       pyflakes = { enabled = false },
-  --       -- rope_autoimport = {
-  --       --   enabled = true,
-  --       --   completions = { enabled = true },
-  --
-  --     }
-  --   }
-  -- },
+  pylsp   = {
+    pylsp = {
+      plugins = {
+        autopep8 = { enabled = false },
+        pycodestyle = { enabled = false },
+        pyflakes = { enabled = false },
+        -- rope_autoimport = {
+        --   enabled = true,
+        --   completions = { enabled = true },
+
+      }
+    }
+  },
 
   basedpyright = {
     basedpyright = {
       analysis = {
-        -- typeCheckingMode = "basic",
+        typeCheckingMode = "basic",
         -- autoImportCompletions =  false,
       }
     }
