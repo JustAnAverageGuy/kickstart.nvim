@@ -30,12 +30,22 @@ vim.keymap.set({ 'n' }, '<leader>cp', '<cmd>%y+<CR>', { desc = "Copy file conten
 vim.api.nvim_create_user_command("W", "write", {}) -- avoid typos
 
 
--- move lines using J, K in visual mode
-vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
-vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+-- move lines using alt+J, alt+K
 
+-- single-line
+vim.keymap.set("n", "<A-j>", ":move .+1<CR>==")
+vim.keymap.set("n", "<A-k>", ":move .-2<CR>==")
+-- multi-line
+vim.keymap.set("v", "<A-j>", ":move '>+1<CR>gv=gv")
+vim.keymap.set("v", "<A-k>", ":move '<-2<CR>gv=gv")
+
+-- leader y yanks into the system clipboard
 vim.keymap.set({ 'v', 'n' }, '<leader>y', '"+y', { desc = "Yank into system clipboard" })
 
+-- yc copies content of default register to the system clipboard
+local function regmove(r1, r2) vim.fn.setreg(r1, vim.fn.getreg(r2)) end -- function is sort of unnecessary, but it is what it is
+vim.keymap.set({ 'n' }, 'yc', function() regmove('+', '"') end, { desc = "Copy contents of \" register to the clipboard", noremap=true })
+
 -- when in visual mode leader p replaces the selection with yanked text without losing the yank
-vim.keymap.set("x", "<leader>p", [["_dP]])
-vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]]) -- deletes into the void register
+vim.keymap.set("x", "<leader>p", [["_dP]], {desc = "Replace visual selection"})
+vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]], {desc = "Delete into void register"}) -- deletes into the void register

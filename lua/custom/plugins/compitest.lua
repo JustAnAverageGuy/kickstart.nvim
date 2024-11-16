@@ -11,7 +11,7 @@ return {
 			}
 		},
 		run_command = {
-			python = { exec = 'pypy', args = { "$(FNAME)" } },
+			python = { exec = '/usr/bin/pypy3', args = { "$(FNAME)" } },
 		},
 		received_files_extension = "py",
 		received_problems_path = function(task, file_extension)
