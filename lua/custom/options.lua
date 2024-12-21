@@ -12,11 +12,6 @@ vim.wo.relativenumber = true
 -- Enable mouse mode
 vim.o.mouse           = 'a'
 
--- Sync clipboard between OS and Neovim.
---  Remove this option if you want your OS clipboard to remain independent.
---  See `:help 'clipboard'`
--- vim.o.clipboard = 'unnamedplus'
-
 -- Enable break indent
 vim.o.breakindent     = true
 
@@ -42,3 +37,12 @@ vim.o.termguicolors   = true
 
 -- Use spaces
 vim.o.expandtab       = true
+
+-- render whitespace
+vim.opt.list = true
+vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
+
+-- change default splitting directions
+vim.opt.splitright = true
+vim.opt.splitbelow = true
+
