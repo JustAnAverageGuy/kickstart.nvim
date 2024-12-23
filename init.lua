@@ -11,9 +11,6 @@ require("custom.config.keymaps")
 -- [[ Install `lazy.nvim` plugin manager ]]
 require("custom.config.lazy")
 
--- NOTE: https://github.com/folke/neodev.nvim/issues/98#issuecomment-1778364644
--- require('lazy').setup({'folke/neodev.nvim'})
--- require('neodev').setup()
 
 
 
@@ -220,9 +217,6 @@ local on_attach = function(_, bufnr)
     vim.lsp.buf.format()
   end, { desc = 'Format current buffer with LSP' })
 end
-
--- Setup neovim lua configuration
-require('neodev').setup()
 
 -- mason-lspconfig requires that these setup functions are called in this order
 -- before setting up the servers.
