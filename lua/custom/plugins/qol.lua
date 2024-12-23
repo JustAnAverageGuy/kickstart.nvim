@@ -1,4 +1,4 @@
--- quality of life features
+-- quality of life and miscellaneous features
 
 return {
   --[[ Detect tabstop and shiftwidth automatically
@@ -20,8 +20,18 @@ return {
     'lukas-reineke/indent-blankline.nvim',
     main = 'ibl',
     opts = {
+      whitespace = { remove_blankline_trail = false },
       indent = {
-        char = '┊'
+        char = { '▏', '▎', '▍', '▌', '▋', '▊', '▉', '█' },
+        --[[ highlight = {
+          "RainbowRed",
+          "RainbowYellow",
+          "RainbowBlue",
+          "RainbowOrange",
+          "RainbowGreen",
+          "RainbowViolet",
+          "RainbowCyan",
+        } ]]
       }
     },
   },
@@ -79,7 +89,7 @@ return {
     },
   },
 
--- TODO: maybe use mini plugins instead of notify and dressing
+  -- TODO: maybe use mini plugins instead of notify and dressing
   --[[
           _   _  __
  _ _  ___| |_(_)/ _|_  _
@@ -99,14 +109,14 @@ return {
   },
   --[[
   -- Better `more` support
-    _               _           
- __| |_ _ ___ _____(_)_ _  __ _ 
+    _               _
+ __| |_ _ ___ _____(_)_ _  __ _
 / _` | '_/ -_|_-<_-< | ' \/ _` |
 \__,_|_| \___/__/__/_|_||_\__, |
-                          |___/ 
+                          |___/
   ]]
   {
-  'stevearc/dressing.nvim',
-  opts = {},
-}
+    'stevearc/dressing.nvim',
+    opts = {},
+  }
 }
