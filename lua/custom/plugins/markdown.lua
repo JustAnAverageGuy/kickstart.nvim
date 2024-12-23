@@ -7,5 +7,6 @@ return {
     ---@type render.md.UserConfig
     opts = {},
     ft = "markdown",
+    cmd = "RenderMarkdown",
   }
 }
