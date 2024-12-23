@@ -27,6 +27,13 @@ return
                 LineNrAbove = { fg = colors.yellow, bg = colors.surface0 },
             }
         end,
+        integrations = {
+            indent_blankline = {
+                enabled = true,
+                scope_color = "",
+                colored_indent_levels = true,
+            }
+        },
     },
     init = function()
         vim.cmd.colorscheme "catppuccin"
