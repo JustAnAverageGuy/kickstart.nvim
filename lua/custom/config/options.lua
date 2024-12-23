@@ -1,6 +1,10 @@
 -- See `:help vim.o`
 -- NOTE: You can change these options as you wish!
 
+-- set leader and local leader to space
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
+
 -- Set highlight on search
 vim.o.hlsearch        = false
 
