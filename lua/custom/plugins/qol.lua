@@ -118,5 +118,16 @@ return {
   {
     'stevearc/dressing.nvim',
     opts = {},
-  }
+  },
+  --[[
+ _   _         _    _____
+| | | |_ _  __| |__|_   _| _ ___ ___
+| |_| | ' \/ _` / _ \| || '_/ -_) -_)
+ \___/|_||_\__,_\___/|_||_| \___\___|
+
+  ]]
+  {
+    "mbbill/undotree",
+    cmd = { "UndotreeToggle", "UndotreeShow" },
+  },
 }
