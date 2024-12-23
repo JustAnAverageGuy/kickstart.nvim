@@ -3,14 +3,14 @@ return {
   build = ':TSUpdate',
   main = 'nvim-treesitter.configs', -- sets up main module such that opts can be directly passed
   opts = {
-    ensure_installed = { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'query', 'vim', 'vimdoc' },
+    ensure_installed      = { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'query', 'vim', 'vimdoc' },
     -- Autoinstall languages that are not installed
-    auto_install = true,
-    highlight  = {
+    auto_install          = true,
+    highlight             = {
       enable = true,
-      additional_vim_regex_highlighting = {'ruby'},
+      additional_vim_regex_highlighting = { 'ruby' },
     },
-    indent = {enable = true, disable = {'ruby'}},
+    indent                = { enable = true, disable = { 'ruby' } },
     incremental_selection = {
       enable = true,
       keymaps = {
@@ -20,7 +20,7 @@ return {
         -- node_decremental = '<M-space>', -- alt space doesn't work on this terminal/window manager
       },
     },
-    textobjects = {
+    textobjects           = {
       select = {
         enable = true,
         lookahead = true, -- Automatically jump forward to textobj, similar to targets.vim
