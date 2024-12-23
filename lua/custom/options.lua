@@ -44,5 +44,3 @@ vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 
 -- change default splitting directions
 vim.opt.splitright = true
-vim.opt.splitbelow = true
-
