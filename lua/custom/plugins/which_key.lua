@@ -39,6 +39,7 @@ return {                -- Useful plugin to show you pending keybinds.
       },
     },
 
+    win = {border = "rounded"},
     -- Document existing key chains
     spec = {
       { '<leader>c', group = '[C]ode',     mode = { 'n', 'x' } },
