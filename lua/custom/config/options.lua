@@ -4,6 +4,7 @@
 -- set leader and local leader to space
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
+vim.g.have_nerd_font = true
 
 -- Set highlight on search
 vim.o.hlsearch        = false
