@@ -1,5 +1,13 @@
 return {
-  { "ellisonleao/glow.nvim", config = true, cmd = "Glow" },
+  {
+    "ellisonleao/glow.nvim",
+  ---@module 'glow'
+  ---@type Config
+    opts = {
+      border = "single",
+    },
+    cmd = "Glow"
+  },
   {
     'MeanderingProgrammer/render-markdown.nvim',
     dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.icons' }, -- if you use standalone mini plugins
