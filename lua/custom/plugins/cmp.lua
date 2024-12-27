@@ -42,11 +42,12 @@ return {
         -- see :h ins-completion
         ['<C-n>'] = cmp.mapping.select_next_item(),
         ['<C-p>'] = cmp.mapping.select_prev_item(),
-        ['<C-b>'] = cmp.mapping.scroll_docs(-4),             -- scroll documentation [b]ack and [f]orward
+        ['<C-b>'] = cmp.mapping.scroll_docs(-4), -- scroll documentation [b]ack and [f]orward
         ['<C-f>'] = cmp.mapping.scroll_docs(4),
-        ['<C-y>'] = cmp.mapping.confirm { select = false, }, -- use <c-y> to accept completion
-        ['<C-Space>'] = cmp.mapping.complete {},             -- manually trigger completion
-        ['<C-l>'] = cmp.mapping(function()                   -- <c-l> will move you to the right of each of the expansion locations.
+        -- ['<C-y>'] = cmp.mapping.confirm { select = false, }, -- use <c-y> to accept completion
+        ['<cr>'] = cmp.mapping.confirm { select = false, }, -- use <c-y> to accept completion
+        ['<C-Space>'] = cmp.mapping.complete {},                   -- manually trigger completion
+        ['<C-l>'] = cmp.mapping(function()                         -- <c-l> will move you to the right of each of the expansion locations.
           if luasnip.expand_or_locally_jumpable() then luasnip.expand_or_jump() end
         end, { 'i', 's' }),
         ['<C-h>'] = cmp.mapping(function() -- <c-h> is similar, except moving you backwards.
