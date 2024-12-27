@@ -4,23 +4,20 @@ return {
   event = 'InsertEnter',
   dependencies = {
     {
-      -- Snippet Engine & its associated nvim-cmp source
+      -- snippets
       'L3MON4D3/LuaSnip',
       build = (function()
         -- Build Step is needed for regex support in snippets.
-        -- This step is not supported in many windows environments.
-        -- Remove the below condition to re-enable on windows.
-        if vim.fn.has 'win32' == 1 or vim.fn.executable 'make' == 0 then
-          return
-        end
+        if vim.fn.has 'win32' == 1 or vim.fn.executable 'make' == 0 then return end
         return 'make install_jsregexp'
       end)(),
       dependencies = {
         -- Adds a number of user-friendly snippets
         'rafamadriz/friendly-snippets',
         config = function()
-          require("luasnip.loaders.from_vscode").lazy_load({ paths = { './snippets/' } })
-          require("luasnip.loaders.from_vscode").lazy_load()
+          require('luasnip.loaders.from_vscode').lazy_load({ paths = { './snippets' } })
+          require('luasnip.loaders.from_vscode').lazy_load()
+          require('luasnip').filetype_extend('html', { 'loremipsum' })
         end
       }
     },
@@ -42,6 +39,7 @@ return {
       },
       completion = { completeopt = 'menu,menuone,noinsert', },
       mapping = cmp.mapping.preset.insert {
+        -- see :h ins-completion
         ['<C-n>'] = cmp.mapping.select_next_item(),
         ['<C-p>'] = cmp.mapping.select_prev_item(),
         ['<C-b>'] = cmp.mapping.scroll_docs(-4),             -- scroll documentation [b]ack and [f]orward
