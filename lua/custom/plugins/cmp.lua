@@ -58,7 +58,7 @@ return {
         end, { 'i', 's' }),
       },
       sources = {
-        { name = 'lazydev', group_index = 0 },
+        { name = 'lazydev', group_index = 0 }, -- set group index to 0 to skip loading LuaLS completions as lazydev recommends it
         { name = 'nvim_lsp' },
         { name = 'luasnip' },
         { name = 'path' },
@@ -66,3 +66,5 @@ return {
     }
   end
 }
+
+-- vim: ts=2 sts=2 sw=2 et
