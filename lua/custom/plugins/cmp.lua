@@ -26,6 +26,14 @@ return {
     -- Adds LSP completion capabilities
     'hrsh7th/cmp-nvim-lsp',
     'hrsh7th/cmp-path',
+    -- dictionary completion
+    {
+      'uga-rosa/cmp-dictionary',
+      opts = {
+        paths = {"/usr/share/dict/words"},
+        first_case_insensitive = true,
+      },
+    },
   },
   config = function()
     -- See `:help cmp`
@@ -61,6 +69,7 @@ return {
         { name = 'nvim_lsp' },
         { name = 'luasnip' },
         { name = 'path' },
+        { name = 'dictionary', keyword_length = 2,  },
       },
     }
   end
