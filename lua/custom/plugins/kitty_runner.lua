@@ -9,9 +9,9 @@ return {
       env_to_copy = { "PATH" }                          -- environment variables, that will be copy to the runner instance
     },
     launch = {
-      default_location = "after",                       -- default location of launch result. Docs: https://sw.kovidgoyal.net/kitty/remote-control/#cmdoption-kitty-launch-location
-      extra_launch_args = {},                           -- extra arguments for launching to runner. Docs: https://sw.kovidgoyal.net/kitty/remote-control/#cmdoption-kitty-launch-location
-      env_to_copy = { "PATH" },                         -- environment variables, that will be copy to the launcher instance
+      default_location = "after", -- default location of launch result. Docs: https://sw.kovidgoyal.net/kitty/remote-control/#cmdoption-kitty-launch-location
+      extra_launch_args = {},     -- extra arguments for launching to runner. Docs: https://sw.kovidgoyal.net/kitty/remote-control/#cmdoption-kitty-launch-location
+      env_to_copy = { "PATH" },   -- environment variables, that will be copy to the launcher instance
     },
     -- NOTE: need to set `allow_remote_control=yes` and `listen_on unix:/tmp/kitty` (or some other path) to kitty.conf
     kitty_listen_on = vim.fn.getenv("KITTY_LISTEN_ON"), -- socket where kitty is listening. See ssh section
