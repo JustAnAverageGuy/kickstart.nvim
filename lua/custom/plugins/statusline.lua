@@ -9,6 +9,12 @@ return {
       theme = 'dracula',
       -- component_separators = '|',
       -- section_separators = '',
+      -- always_show_tabline = false,
+    },
+    sections = {
+      lualine_c = {
+        {'filename', path = 3},
+      },
     },
     extensions = {
       'quickfix',
