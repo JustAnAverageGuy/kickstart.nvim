@@ -22,12 +22,24 @@ return {
       "<leader>x",
       function()
         vim.api.nvim_command('update') -- save current buffer if it is unsaved before trying to execute it
-        local command = string.format("py %s", vim.fn.expand('%:p'))
+        --[[
+          TODO: Maybe support executing general files by doing ./%s
+          will need proper quoting and escaping and other things
+        ]]
+        local filetype_commands = {
+          ['python'] = 'py %s', -- can be /usr/bin/python3 or something
+          ['ruby'] = 'ruby %s',
+        }
+        local command = string.format(
+          filetype_commands[vim.bo.filetype] or './%s',
+          -- vim.fn.expand('%:p') -- alternative
+          vim.fn.shellescape(vim.fn.expand('%:p'), true) -- note, for some reason doesn't quote quotes properly TODO: investingate, maybe due to kitty's internal quoting mechanism
+        )
         require("kitty-runner").send_to_runner(command)
       end,
       { 'n' },
-      ft = 'python',
-      desc = "execute python file in 😼"
+      -- ft = {'python', 'ruby'},
+      desc = "execute file in 😼"
     },
   },
 }
