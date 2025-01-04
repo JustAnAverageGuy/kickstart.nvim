@@ -99,7 +99,8 @@ return {
 
       local servers = {
         -- clangd = {},
-        -- gopls = {},
+        gopls = {},
+        marksman = {},
 
         pylsp        = {
           -- cmd = { ... },
@@ -133,7 +134,7 @@ return {
         },
 
         -- rust_analyzer = {},
-        ts_ls        = {},
+        -- ts_ls        = {},
         -- html = { filetypes = { 'html', 'twig', 'hbs'} },
 
         lua_ls       = {
