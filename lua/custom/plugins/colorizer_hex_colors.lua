@@ -1,9 +1,11 @@
-return
-{
-  'chrisbra/Colorizer',
-  lazy = true,
-  config = function()
-    vim.g["colorizer_auto_filetype"] = 'css,html';
-    -- colorizer_fg_contrast=2;
-  end
+-- see :h colorizer.lua
+return {
+  'norcalli/nvim-colorizer.lua',
+  opts = {
+    ['css']  = { css = true, },
+    ['html'] = { css = true, },
+    'js',
+  }, -- NOTE: cannot use the second "default" argument this way, but whatever
+  ft = { 'css', 'html', 'js' },
+  cmd = { 'ColorizerToggle' }
 }
