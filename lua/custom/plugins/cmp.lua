@@ -46,6 +46,10 @@ return {
         expand = function(args) luasnip.lsp_expand(args.body) end,
       },
       completion = { completeopt = 'menu,menuone,noinsert', },
+      window = {
+        completion = cmp.config.window.bordered(),
+        documentation = cmp.config.window.bordered(),
+      },
       mapping = cmp.mapping.preset.insert {
         -- see :h ins-completion
         ['<C-n>'] = cmp.mapping.select_next_item(),
@@ -69,7 +73,7 @@ return {
         { name = 'nvim_lsp' },
         { name = 'luasnip' },
         { name = 'path' },
-        { name = 'dictionary', keyword_length = 2,  },
+        { name = 'dictionary', keyword_length = 4,  },
       },
     }
   end
