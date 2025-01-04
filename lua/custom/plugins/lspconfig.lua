@@ -102,7 +102,8 @@ return {
         gopls = {},
         marksman = {},
 
-        pylsp        = {
+        --[[ Try to remember why was I using pylsp in the first place, there definitely was a reason. Hence temporarily disable this, and work with pyright alone]]
+        --[[ pylsp        = {
           -- cmd = { ... },
           -- filetypes = { ... },
           -- capabilities = { ... },
@@ -120,7 +121,7 @@ return {
               }
             }
           },
-        },
+        }, ]]
 
         basedpyright = {
           settings = {
