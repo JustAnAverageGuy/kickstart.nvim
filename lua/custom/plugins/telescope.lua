@@ -74,7 +74,7 @@ return {
     end, { desc = '[S]earch [N]eovim files' })
 
     vim.keymap.set('n', '<leader>sa', function()
-      builtin.find_files { hidden = true, no_ignore = true, no_ignore_parent = true,}
+      builtin.find_files { hidden = true, no_ignore = true, no_ignore_parent = true, }
     end, { desc = '[S]earch [A]ll files in cwd' })
 
     local function find_git_root()
@@ -91,8 +91,9 @@ return {
       end
 
       -- Find the Git root directory from the current file's path
-      local git_root = vim.fn.systemlist('git -C ' .. vim.fn.escape(current_dir, ' ') .. ' rev-parse --show-toplevel')
-      [1]
+      local git_root = vim.fn.systemlist(
+        'git -C ' .. vim.fn.escape(current_dir, ' ') .. ' rev-parse --show-toplevel'
+      )[1]
       if vim.v.shell_error ~= 0 then
         vim.notify('Not a git repository. Searching on current working directory', vim.log.WARN)
         return cwd
