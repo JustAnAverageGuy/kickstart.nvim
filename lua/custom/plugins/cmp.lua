@@ -32,6 +32,7 @@ return {
       opts = {
         paths = {"/usr/share/dict/words"},
         first_case_insensitive = true,
+        exact_length = 4,
       },
     },
   },
