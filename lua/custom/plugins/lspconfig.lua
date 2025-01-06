@@ -131,6 +131,7 @@ return {
           }
         },
 
+        -- biome = { settings = {biome = {rename = true}}},
         -- rust_analyzer = {},
         -- ts_ls        = {},
         -- html = { filetypes = { 'html', 'twig', 'hbs'} },
