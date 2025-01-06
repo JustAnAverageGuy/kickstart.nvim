@@ -26,7 +26,7 @@ return {
       defaults = {
         mappings = {
           i = {
-            ['<C-CR>'] = 'to_fuzzy_refine',
+            ['<C-CR>'] = 'to_fuzzy_refine', -- convert a non-fuzzy search to a fuzzy one
           },
         }
       },
