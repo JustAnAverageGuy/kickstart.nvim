@@ -25,7 +25,10 @@ return {
   },
   {
     'MeanderingProgrammer/render-markdown.nvim',
-    dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.icons' }, -- if you use standalone mini plugins
+    dependencies = {
+      'nvim-treesitter/nvim-treesitter',
+      'echasnovski/mini.icons', -- if you use standalone mini plugins
+    },
     ---@module 'render-markdown'
     ---@type render.md.UserConfig
     opts = {
@@ -35,6 +38,10 @@ return {
         left_pad  = 1,
         right_pad = 1,
         border    = 'thick', -- TODO: doesn't seem to do anything, see later
+      },
+      pipe_table = {
+        preset = 'round',
+        cell = 'trimmed',
       }
     },
     ft = "markdown",
