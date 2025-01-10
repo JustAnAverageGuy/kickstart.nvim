@@ -3,7 +3,7 @@ return {
   build = ':TSUpdate',
   main = 'nvim-treesitter.configs', -- sets up main module such that opts can be directly passed
   opts = {
-    ensure_installed      = { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'query', 'vim', 'vimdoc' },
+    ensure_installed      = { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'latex', 'query', 'vim', 'vimdoc' },
     -- Autoinstall languages that are not installed
     auto_install          = true,
     highlight             = {
