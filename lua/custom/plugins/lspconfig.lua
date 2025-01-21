@@ -120,6 +120,7 @@ return {
           },
         }, ]]
 
+        ruff = {},
         basedpyright = {
           settings = {
             basedpyright = {
