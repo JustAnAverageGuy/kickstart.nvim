@@ -42,7 +42,8 @@ return {
       pipe_table = {
         preset = 'round',
         cell = 'trimmed',
-      }
+      },
+      latex = { enabled=false, },
     },
     ft = "markdown",
     cmd = "RenderMarkdown",
