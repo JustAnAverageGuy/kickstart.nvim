@@ -65,6 +65,20 @@ return {
       },
     },
   },
+  config = function(_, opts)
+    local parser_config = require('nvim-treesitter.parsers').get_parser_configs()
+    parser_config.mips = {
+      install_info = {
+        url = 'https://github.com/omeyenburg/tree-sitter-mips', -- You can use a local path for url if you prefer
+        branch = 'main',
+        files = { 'src/parser.c' },
+        generate_requires_npm = false,
+        requires_generate_from_grammar = false,
+      },
+      filetype = 'mips', -- note: a simple way to automatically set filetype is using modeline; e.g. `# vim: filetype=mips`
+    }
+    require("nvim-treesitter.configs").setup(opts)
+  end,
   dependencies = {
     'nvim-treesitter/nvim-treesitter-textobjects',
   },
