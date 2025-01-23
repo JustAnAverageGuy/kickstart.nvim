@@ -43,7 +43,12 @@ return {
         preset = 'round',
         cell = 'trimmed',
       },
-      latex = { enabled=false, },
+      latex = { enabled = false, },
+      link = {
+        custom = {
+          wikipedia = { pattern = 'wikipedia%.org', icon = '󰖬 ' },
+        },
+      },
     },
     ft = "markdown",
     cmd = "RenderMarkdown",
