@@ -78,6 +78,8 @@ return {
       filetype = 'mips', -- note: a simple way to automatically set filetype is using modeline; e.g. `# vim: filetype=mips`
     }
     require("nvim-treesitter.configs").setup(opts)
+    -- note: also need to do `cp ./queries/* $XDG_CONFIG_HOME/nvim/queries/mips/` to enable highlight
+    -- see https://github.com/omeyenburg/tree-sitter-mips
   end,
   dependencies = {
     'nvim-treesitter/nvim-treesitter-textobjects',
