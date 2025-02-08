@@ -31,7 +31,7 @@ return {
           ['ruby'] = 'ruby %s',
         }
         local command = string.format(
-          filetype_commands[vim.bo.filetype] or './%s',
+          filetype_commands[vim.bo.filetype] or '%s',
           -- vim.fn.expand('%:p') -- alternative
           vim.fn.shellescape(vim.fn.expand('%:p'), true) -- note, for some reason doesn't quote quotes properly TODO: investingate, maybe due to kitty's internal quoting mechanism
         )
