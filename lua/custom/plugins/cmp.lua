@@ -46,7 +46,7 @@ return {
       snippet = {
         expand = function(args) luasnip.lsp_expand(args.body) end,
       },
-      completion = { completeopt = 'menu,menuone,noinsert', },
+      completion = { completeopt = 'menu,menuone,noinsert,noselect', },
       window = {
         completion = cmp.config.window.bordered(),
         documentation = cmp.config.window.bordered(),
