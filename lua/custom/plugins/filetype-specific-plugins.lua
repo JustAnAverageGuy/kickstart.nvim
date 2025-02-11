@@ -55,7 +55,7 @@ return {
         below = "▔",
         above = "▁",
         left_pad = 0,
-        position = "left",
+        position = "inline",
         icons = {
           "█ ",
           "██ ",
