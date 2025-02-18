@@ -161,15 +161,16 @@ return {
 |_|_|_|_\__,_\__, \___|
              |___/
   ]]
-  {
-    "3rd/image.nvim",
-    opts = {
-      integrations = {
-        markdown = {
-          -- download_remote_images = false,
-          only_render_image_at_cursor = true,
+  -- lazy.nvim
+{
+  "folke/snacks.nvim",
+  ---@type snacks.Config
+  opts = {
+    image = {
+        doc = {
+          inline = false,
         },
-      },
     },
-  },
+  }
+}
 }
