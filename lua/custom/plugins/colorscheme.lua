@@ -21,7 +21,7 @@ return
         transparent_background = true, -- disables setting the background color.
         custom_highlights = function(colors)
             return {
-                Comment     = { fg = colors.subtext1 },
+                -- Comment     = { fg = colors.subtext1 },
                 LineNr      = { fg = colors.yellow, style = { "bold", "standout" } },
                 LineNrBelow = { fg = colors.yellow, bg = colors.surface0 },
                 LineNrAbove = { fg = colors.yellow, bg = colors.surface0 },
