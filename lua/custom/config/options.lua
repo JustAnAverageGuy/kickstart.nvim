@@ -1,5 +1,4 @@
 -- See `:help vim.o`
--- NOTE: You can change these options as you wish!
 
 -- set leader and local leader to space
 vim.g.mapleader = ' '
@@ -44,10 +43,10 @@ vim.o.termguicolors   = true
 vim.o.expandtab       = true
 
 -- render whitespace
-vim.opt.list = true
+vim.o.list = true
 vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 
 -- change default splitting directions
-vim.opt.splitright = true
+vim.o.splitright = true
 
-vim.opt.scrolloff = 10
+vim.o.scrolloff = 10
