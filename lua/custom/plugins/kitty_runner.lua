@@ -29,6 +29,7 @@ return {
         local filetype_commands = {
           ['python'] = 'py %s', -- can be /usr/bin/python3 or something
           ['ruby'] = 'ruby %s',
+          ['mips'] = 'mars %s',
         }
         local command = string.format(
           filetype_commands[vim.bo.filetype] or '%s',
