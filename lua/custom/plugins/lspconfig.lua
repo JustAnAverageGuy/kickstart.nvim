@@ -78,11 +78,46 @@ return {
           end
           map('<leader>wa', vim.lsp.buf.add_workspace_folder, '[W]orkspace [A]dd Folder')
           map('<leader>wr', vim.lsp.buf.remove_workspace_folder, '[W]orkspace [R]emove Folder')
-          map('<leader>wl', function() print(vim.inspect(vim.lsp.buf.list_workspace_folders())) end, '[W]orkspace [L]ist Folders')
+          map('<leader>wl', function() print(vim.inspect(vim.lsp.buf.list_workspace_folders())) end,
+            '[W]orkspace [L]ist Folders')
           -- vim.api.nvim_buf_create_user_command(event.buf, 'Format', function(_) vim.lsp.buf.format() end, { desc = 'Format current buffer with LSP' })
           map('<leader>f', vim.lsp.buf.format, '[F]ormat current buffer with LSP')
         end,
       })
+
+      -- Diagnostic Config
+      -- See :help vim.diagnostic.Opts
+      vim.diagnostic.config {
+        severity_sort = true,
+        float = {
+          border = 'rounded',
+          -- source = 'if_many'
+          source = true,
+        },
+        underline = { severity = vim.diagnostic.severity.ERROR },
+        signs = vim.g.have_nerd_font and {
+          text = {
+            [vim.diagnostic.severity.ERROR] = '󰅚 ',
+            [vim.diagnostic.severity.WARN] = '󰀪 ',
+            [vim.diagnostic.severity.INFO] = '󰋽 ',
+            [vim.diagnostic.severity.HINT] = '󰌶 ',
+          },
+        } or {},
+        virtual_text = {
+          source = 'if_many',
+          spacing = 2,
+          format = function(diagnostic)
+            local diagnostic_message = {
+              [vim.diagnostic.severity.ERROR] = diagnostic.message,
+              [vim.diagnostic.severity.WARN] = diagnostic.message,
+              [vim.diagnostic.severity.INFO] = diagnostic.message,
+              [vim.diagnostic.severity.HINT] = diagnostic.message,
+            }
+            return diagnostic_message[diagnostic.severity]
+          end,
+        },
+      }
+
 
       local capabilities = vim.lsp.protocol.make_client_capabilities()
       capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
@@ -120,12 +155,24 @@ return {
           },
         }, ]]
 
-        ruff = {},
+        -- idk, for some reason ruff config is weird
+
+        ruff         = {
+          init_options = {
+            settings = {
+              configurationPreference = "filesystemFirst",
+              lint = {
+                ignore = { "E701", "E702" },
+              },
+            }
+          },
+        },
+
         basedpyright = {
           settings = {
             basedpyright = {
               analysis = {
-                typeCheckingMode = "basic",
+                typeCheckingMode = "standard",
                 -- autoImportCompletions =  false,
               }
             }
@@ -149,12 +196,16 @@ return {
         },
       }
 
-      require('mason').setup()
+      -- require('mason').setup() -- managed by lazy's dependency management
       local ensure_installed = vim.tbl_keys(servers or {})
-      vim.list_extend(ensure_installed, { 'stylua' })
-      require('mason-tool-installer').setup({ ensure_installed = ensure_installed })
+      vim.list_extend(ensure_installed, {
+        'stylua', -- Used to format Lua code
+      })
+      require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
       require('mason-lspconfig').setup {
+        ensure_installed = {}, -- explicitly set to an empty table (Kickstart populates installs via mason-tool-installer)
+        automatic_installation = false,
         handlers = {
           function(server_name)
             local server = servers[server_name] or {}
@@ -166,7 +217,7 @@ return {
           end,
         },
       }
-    end
+    end,
   },
 }
 -- vim: ts=2 sts=2 sw=2 et
