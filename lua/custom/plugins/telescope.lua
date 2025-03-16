@@ -77,6 +77,10 @@ return {
       builtin.find_files { hidden = true, no_ignore = true, no_ignore_parent = true, }
     end, { desc = '[S]earch [A]ll files in cwd' })
 
+    vim.keymap.set('n', '<leader>sF', function()
+      builtin.find_files { cwd = require('telescope.utils').buffer_dir(),  hidden = true,}
+    end, { desc = "[S]earch [F]iles in buffer's directory" })
+
     -- Custom live_grep function to search in git root
     -- https://github.com/nvim-telescope/telescope.nvim/wiki/Configuration-Recipes/87a4df9f66be884f8cbfb3239c6f70b1f0462460#live-grep-from-project-git-root-with-fallback
     local function live_grep_from_project_git_root()
