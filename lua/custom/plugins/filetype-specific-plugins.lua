@@ -68,5 +68,16 @@ return {
     },
     ft = "markdown",
     cmd = "RenderMarkdown",
-  }
+  },
+  --[[
+ ___     _                  
+/ __| __| |_  ___ _ __  ___ 
+\__ \/ _| ' \/ -_) '  \/ -_)
+|___/\__|_||_\___|_|_|_\___|
+                            
+    ]]
+  {
+    'gpanders/nvim-parinfer',
+    ft = {'scheme'},
+  },
 }

@@ -142,7 +142,9 @@ return {
     -- Optional dependency
     event = "InsertEnter",
     dependencies = { 'hrsh7th/nvim-cmp' },
-    opts = {},
+    opts = {
+      disable_filetype = { "scheme" }, -- handled by nvim_parinfer
+    },
     --   -- If you want to automatically add `(` after selecting a function or method
     -- config = function()
     --   require("nvim-autopairs").setup {}
@@ -162,15 +164,15 @@ return {
              |___/
   ]]
   -- lazy.nvim
-{
-  "folke/snacks.nvim",
-  ---@type snacks.Config
-  opts = {
-    image = {
+  {
+    "folke/snacks.nvim",
+    ---@type snacks.Config
+    opts = {
+      image = {
         doc = {
           inline = false,
         },
-    },
+      },
+    }
   }
-}
 }
