@@ -75,7 +75,7 @@ return {
         { name = 'nvim_lsp' },
         { name = 'luasnip' },
         { name = 'path' },
-        { name = 'dictionary', keyword_length = 4,  },
+        -- { name = 'dictionary', keyword_length = 4,  },
       },
     }
   end
