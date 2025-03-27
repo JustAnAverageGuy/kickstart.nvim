@@ -24,7 +24,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 })
 
 -- [[ Custom Keymaps/Keybinds ]]
-vim.keymap.set('i', '<C-s>', '<C-o>:update<CR>', { desc = "Save file with ctrl-s when in insert mode" }) -- ctrl s saves the file in insert mode
+-- vim.keymap.set('i', '<C-s>', '<C-o>:update<CR>', { desc = "Save file with ctrl-s when in insert mode" }) -- ctrl s saves the file in insert mode
 vim.keymap.set({ 'n' }, '<leader>cp', '<cmd>%y+<CR>', { desc = "Copy file contents to system clipboard" })
 
 vim.api.nvim_create_user_command("W", "write", {}) -- avoid typos
