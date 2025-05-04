@@ -1,4 +1,7 @@
 -- See `:help vim.o`
+-- - vim.o is a get-set interface for the variables
+-- - vim.opt basically allows treating list style options as 
+--   lua tables instead of comma delimited strings
 
 -- set leader and local leader to space
 vim.g.mapleader = ' '
@@ -8,7 +11,7 @@ vim.g.have_nerd_font = true
 vim.o.winborder = 'single'
 
 -- Set highlight on search
-vim.o.hlsearch        = false
+-- vim.o.hlsearch        = false
 
 -- Make hybrid line numbers default
 
