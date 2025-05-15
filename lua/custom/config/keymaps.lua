@@ -51,3 +51,11 @@ vim.keymap.set({ 'n' }, 'yc', function() regmove('+', '"') end, { desc = "Copy c
 -- when in visual mode leader p replaces the selection with yanked text without losing the yank
 vim.keymap.set("x", "<leader>p", [["_dP]], {desc = "Replace visual selection"})
 vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]], {desc = "Delete into void register"}) -- deletes into the void register
+
+vim.keymap.set('n',
+  '<leader>ww',
+  function()
+    vim.wo.wrap = not vim.wo.wrap;
+    vim.notify("toggled wordwrap to " .. (vim.wo.wrap and "ON" or "OFF"), vim.log.levels.INFO)
+  end,
+  { desc = "toggle word [W]rap" })
