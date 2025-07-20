@@ -65,6 +65,9 @@ return {
           "██████ ",
         },
       },
+      completions = {
+        lsp = { enabled = true },
+      }
     },
     ft = "markdown",
     cmd = "RenderMarkdown",

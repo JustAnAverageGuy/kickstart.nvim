@@ -75,6 +75,7 @@ return {
         { name = 'nvim_lsp' },
         { name = 'luasnip' },
         { name = 'path' },
+        { name = 'render-markdown' },
         -- { name = 'dictionary', keyword_length = 4,  },
       },
     }
