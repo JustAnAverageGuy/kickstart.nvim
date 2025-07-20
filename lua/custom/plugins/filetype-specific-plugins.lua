@@ -69,6 +69,22 @@ return {
     ft = "markdown",
     cmd = "RenderMarkdown",
   },
+  {
+    'opdavies/toggle-checkbox.nvim',
+    keys = {
+      {
+        '<leader>tt',
+        function()
+          require('toggle-checkbox').toggle()
+        end,
+        mode = "n",
+        ft = "markdown",
+        desc= "Toggle checkbox",
+      }
+    },
+    ft= {'markdown'},
+
+  },
   --[[
  ___     _                  
 / __| __| |_  ___ _ __  ___ 
