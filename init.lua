@@ -11,5 +11,7 @@ require("custom.config.keymaps")
 -- [[ Install `lazy.nvim` plugin manager ]]
 require("custom.config.lazy")
 
+-- [[ Configure Language Servers ]]
+require("custom.config.lsp")
 
 -- vim: ts=2 sts=2 sw=2 et
