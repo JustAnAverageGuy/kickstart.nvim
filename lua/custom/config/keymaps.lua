@@ -29,6 +29,8 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 -- vim.keymap.set('i', '<C-s>', '<C-o>:update<CR>', { desc = "Save file with ctrl-s when in insert mode" }) -- ctrl s saves the file in insert mode
 vim.keymap.set({ 'n' }, '<leader>cp', '<cmd>%y+<CR>', { desc = "Copy file contents to system clipboard" })
 
+vim.keymap.set({ 'n' }, '<leader>m', '<cmd>update<CR><cmd>make<CR>', { desc = "Save file and run make" })
+
 vim.api.nvim_create_user_command("W", "write", {}) -- avoid typos
 
 
@@ -58,4 +60,5 @@ vim.keymap.set('n',
     vim.wo.wrap = not vim.wo.wrap;
     vim.notify("toggled wordwrap to " .. (vim.wo.wrap and "ON" or "OFF"), vim.log.levels.INFO)
   end,
-  { desc = "toggle word [W]rap" })
+  { desc = "toggle word [W]rap" }
+)

@@ -82,21 +82,21 @@ return {
         end,
         mode = "n",
         ft = "markdown",
-        desc= "Toggle checkbox",
+        desc = "Toggle checkbox",
       }
     },
-    ft= {'markdown'},
+    ft = { 'markdown' },
 
   },
   --[[
- ___     _                  
-/ __| __| |_  ___ _ __  ___ 
+ ___     _
+/ __| __| |_  ___ _ __  ___
 \__ \/ _| ' \/ -_) '  \/ -_)
 |___/\__|_||_\___|_|_|_\___|
-                            
+
     ]]
   {
     'gpanders/nvim-parinfer',
-    ft = {'scheme'},
+    ft = { 'scheme' },
   },
 }
