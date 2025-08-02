@@ -30,6 +30,7 @@ return {
           ['python'] = 'py %s', -- can be /usr/bin/python3 or something
           ['ruby'] = 'ruby %s',
           ['mips'] = 'mars %s',
+          ['go'] = 'go run %s',
         }
         local command = string.format(
           filetype_commands[vim.bo.filetype] or '%s',
