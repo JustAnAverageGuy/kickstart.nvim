@@ -25,9 +25,18 @@
 --- ```
 ---
 --- Refer to the [documentation](https://docs.astral.sh/ruff/editors/) for more details.
+
+--- ruff settings is weird like that
 return {
   cmd = { 'ruff', 'server' },
   filetypes = { 'python' },
   root_markers = { 'pyproject.toml', 'ruff.toml', '.ruff.toml', '.git' },
-  settings = {},
+  init_options = {
+    settings = {
+      configurationPreference = "filesystemFirst",
+      lint = {
+        ignore = { "E701", "E702" },
+      },
+    }
+  },
 }
