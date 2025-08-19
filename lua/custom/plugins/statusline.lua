@@ -1,3 +1,5 @@
+---@module "lazy"
+---@type LazyPluginSpec
 return {
   -- Set lualine as statusline
   'nvim-lualine/lualine.nvim',

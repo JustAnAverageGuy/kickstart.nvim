@@ -1,3 +1,5 @@
+---@module "lazy"
+---@type LazyPluginSpec
 return {
 	"xeluxee/competitest.nvim",
 	lazy = true,

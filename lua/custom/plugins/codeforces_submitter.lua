@@ -1,3 +1,5 @@
+---@module "lazy"
+---@type LazyPluginSpec
 return
 {
   -- "JustAnAverageGuy/CodeForce.vim",

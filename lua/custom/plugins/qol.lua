@@ -1,5 +1,7 @@
 -- quality of life and miscellaneous features
 
+---@module "lazy"
+---@type LazyPluginSpec | LazyPluginSpec[]
 return {
   --[[ Detect tabstop and shiftwidth automatically
                            _         _         _   
@@ -172,15 +174,15 @@ return {
     -- end,
   },
   --[[
- _
-(_)_ __  __ _ __ _ ___
-| | '  \/ _` / _` / -_)
-|_|_|_|_\__,_\__, \___|
-             |___/
+                 _         ___                     
+ ____ _  __ _ __| |__ ___ / (_)_ __  __ _ __ _ ___ 
+(_-< ' \/ _` / _| / /(_-</ /| | '  \/ _` / _` / -_)
+/__/_||_\__,_\__|_\_\/__/_/ |_|_|_|_\__,_\__, \___|
+                                         |___/     
   ]]
-  -- lazy.nvim
   {
     "folke/snacks.nvim",
+    ---@module 'snacks'
     ---@type snacks.Config
     opts = {
       image = {

@@ -1,3 +1,5 @@
+---@module "lazy"
+---@type LazyPluginSpec
 return {
   'nvim-treesitter/nvim-treesitter',
   build = ':TSUpdate',
@@ -66,6 +68,7 @@ return {
     },
   },
   config = function(_, opts)
+    ---@class custom_class_name_so_that_you_can_assign_to_the_nips_field_without_warnings_from_luals
     local parser_config = require('nvim-treesitter.parsers').get_parser_configs()
     parser_config.mips = {
       install_info = {

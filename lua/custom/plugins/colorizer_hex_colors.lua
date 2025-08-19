@@ -1,3 +1,5 @@
+---@module "lazy"
+---@type LazyPluginSpec | LazyPluginSpec[]
 return
 {
   {
@@ -12,6 +14,7 @@ return
     cmd = { 'ColorizerToggle' }
   },
   {
+    ---@alias buffer integer
     "m00qek/baleia.nvim",
     version = "*",
     config = function()

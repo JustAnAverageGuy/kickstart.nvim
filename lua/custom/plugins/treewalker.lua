@@ -1,3 +1,5 @@
+---@module "lazy"
+---@type LazyPluginSpec
 return {
   "aaronik/treewalker.nvim",
   opts = {

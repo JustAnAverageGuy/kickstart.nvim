@@ -1,5 +1,7 @@
 -- Fuzzy Finder (files, lsp, etc)
 
+---@module "lazy"
+---@type LazyPluginSpec
 return {
   'nvim-telescope/telescope.nvim',
   event = 'VimEnter',

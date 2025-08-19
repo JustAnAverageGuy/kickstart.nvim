@@ -1,5 +1,7 @@
 -- LSP related plugins
 
+---@module "lazy"
+---@type LazyPluginSpec | LazyPluginSpec[]
 return {
   {
     -- `lazydev` configures Lua LSP for your Neovim config, runtime and plugins

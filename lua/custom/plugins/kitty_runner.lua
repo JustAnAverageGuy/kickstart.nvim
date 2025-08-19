@@ -1,3 +1,5 @@
+---@module "lazy"
+---@type LazyPluginSpec
 return {
   "lolpie244/simple-kitty-runner.nvim",
   opts = {

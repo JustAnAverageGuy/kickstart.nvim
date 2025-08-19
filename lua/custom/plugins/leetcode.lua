@@ -1,4 +1,6 @@
 local leet_arg = "leetcode"
+---@module "lazy"
+---@type LazyPluginSpec
 return {
     "kawre/leetcode.nvim",
     build = ":TSUpdate html",

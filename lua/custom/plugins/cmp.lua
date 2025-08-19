@@ -1,3 +1,5 @@
+---@module "lazy"
+---@type LazyPluginSpec
 return {
   -- Autocompletion
   'hrsh7th/nvim-cmp',

@@ -1,3 +1,5 @@
+---@module "lazy"
+---@type LazyPluginSpec
 return {
   'tpope/vim-fugitive',
   'tpope/vim-rhubarb',

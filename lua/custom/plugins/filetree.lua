@@ -1,8 +1,8 @@
 -- Unless you are still migrating, remove the deprecated commands from v1.x
 vim.g.neo_tree_remove_legacy_commands = 1
 
-  ---@module "lazy"
-  ---@type LazyPluginSpec
+---@module "lazy"
+---@type LazyPluginSpec
 return {
   "nvim-neo-tree/neo-tree.nvim",
   version = "*",
