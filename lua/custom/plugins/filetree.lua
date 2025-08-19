@@ -1,6 +1,8 @@
 -- Unless you are still migrating, remove the deprecated commands from v1.x
 vim.g.neo_tree_remove_legacy_commands = 1
 
+  ---@module "lazy"
+  ---@type LazyPluginSpec
 return {
   "nvim-neo-tree/neo-tree.nvim",
   version = "*",
@@ -10,8 +12,19 @@ return {
     "MunifTanjim/nui.nvim",
   },
   keys = {
-    { "<leader>\\", "<cmd>Neotree toggle<cr>", desc = "NeoTree" },
+    { "\\", "<cmd>Neotree toggle<cr>", desc = "NeoTree" },
+    { "<leader>\\", "<cmd>Neotree reveal<cr>", desc = "NeoTree show in directory" },
   },
-  opts = {},
+  lazy = false,
+  ---@module "neo-tree"
+  ---@type neotree.Config?
+  opts = {
+    filesystem = {
+      window = {
+        mappings = {
+          ['\\'] = 'close_window',
+        },
+      },
+    }
+  },
 }
-
