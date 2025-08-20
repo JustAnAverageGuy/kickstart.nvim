@@ -62,6 +62,12 @@ capabilities = vim.tbl_deep_extend(
   'force', capabilities,
   require('cmp_nvim_lsp').default_capabilities()
 )
+capabilities = vim.tbl_deep_extend(
+  -- using 'error' since cmp_nvim_lsp probably doesnot have workspace rename capabilities
+  -- and even if it does have it, I don't want to unknowingly overwrite them
+  'error', capabilities,
+  require('lsp-file-operations').default_capabilities()
+)
 
 vim.lsp.config('*', {
   capabilities = capabilities,
@@ -80,4 +86,4 @@ local enabled_servers = {
 
 vim.lsp.enable(enabled_servers);
 
--- vim: ts=2 sts=2 sw=2 fdm=marker et
+-- vim: ts=2 sts=2 sw=2 fdm=marker fen et

@@ -1,3 +1,6 @@
+-- [[ Filetree plugin config ]]
+-- Currently using neo-tree.nvim
+
 -- Unless you are still migrating, remove the deprecated commands from v1.x
 vim.g.neo_tree_remove_legacy_commands = 1
 
@@ -351,8 +354,9 @@ local nesting_rules = {
 -- }}}
 
 ---@module "lazy"
----@type LazyPluginSpec
+---@type LazyPluginSpec | LazyPluginSpec[]
 return {
+  {
   "nvim-neo-tree/neo-tree.nvim",
   version = "*",
   dependencies = {
@@ -376,6 +380,20 @@ return {
       },
     },
     nesting_rules = nesting_rules,
+  },
+  },
+  {
+    -- provides lsp events for file changed events etc
+    "antosha417/nvim-lsp-file-operations",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    -- Uncomment whichever supported plugin(s) you use
+      -- NOTE: ordering matters, neo-tree must be loaded before this, hence, dependencies
+      -- "nvim-tree/nvim-tree.lua",
+      "nvim-neo-tree/neo-tree.nvim",
+      -- "simonmclean/triptych.nvim"
+    },
+    opts = {},
   },
 }
 
