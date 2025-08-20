@@ -8,6 +8,9 @@ require("custom.config.options")
 -- [[ Basic Keymaps ]]
 require("custom.config.keymaps")
 
+-- [[ Configure diagnostics ]]
+require("custom.config.diagnostics")
+
 -- [[ Install `lazy.nvim` plugin manager ]]
 require("custom.config.lazy")
 
