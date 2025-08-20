@@ -1,3 +1,4 @@
+-- stylua: ignore
 ---@module "lazy"
 ---@type LazyPluginSpec
 return {

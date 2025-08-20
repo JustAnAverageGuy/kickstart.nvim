@@ -1420,6 +1420,7 @@ local nesting_rules = {
 
 -- }}}
 
+--stylua: ignore
 ---@module "lazy"
 ---@type LazyPluginSpec | LazyPluginSpec[]
 return {

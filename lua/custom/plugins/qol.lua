@@ -82,13 +82,15 @@ return {
            |_|       |_|
   ]]
   {
+    -- stylua: ignore start
     'anuvyklack/help-vsplit.nvim',
     opts = {
       always = false, -- always open help in vertical split
-      side = 'left',  -- 'left' or 'right'
+      side = 'left', -- 'left' or 'right'
       buftype = { 'help' },
       filetype = { 'man' },
     },
+    -- stylua: ignore end
   },
 
   -- TODO: maybe use mini plugins instead of notify and dressing

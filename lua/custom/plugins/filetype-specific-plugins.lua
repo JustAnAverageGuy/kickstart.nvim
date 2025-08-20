@@ -26,6 +26,7 @@ return {
     cmd = 'Glow',
   },
   {
+    -- stylua: ignore start
     'MeanderingProgrammer/render-markdown.nvim',
     dependencies = {
       'nvim-treesitter/nvim-treesitter',
@@ -74,6 +75,7 @@ return {
     ft = 'markdown',
     cmd = 'RenderMarkdown',
   },
+  -- stylua: ignore end
   {
     'opdavies/toggle-checkbox.nvim',
     keys = {

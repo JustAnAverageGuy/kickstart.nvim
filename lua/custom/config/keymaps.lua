@@ -57,6 +57,7 @@ end, { desc = 'Copy contents of " register to the clipboard', noremap = true })
 vim.keymap.set('x', '<leader>p', [["_dP]], { desc = 'Replace visual selection' })
 vim.keymap.set({ 'n', 'v' }, '<leader>d', [["_d]], { desc = 'Delete into void register' }) -- deletes into the void register
 
+-- stylua: ignore
 vim.keymap.set('n', '<leader>ww',
   function()
     vim.wo.wrap = not vim.wo.wrap

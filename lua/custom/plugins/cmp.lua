@@ -59,6 +59,7 @@ return {
         documentation = cmp.config.window.bordered(),
       },
       mapping = cmp.mapping.preset.insert {
+        -- stylua: ignore start
         -- see :h ins-completion
         ['<C-n>'] = cmp.mapping.select_next_item(),
         ['<C-p>'] = cmp.mapping.select_prev_item(),
@@ -77,6 +78,7 @@ return {
             luasnip.jump(-1)
           end
         end, { 'i', 's' }),
+        -- stylua: ignore end
       },
       sources = {
         { name = 'lazydev', group_index = 0 }, -- set group index to 0 to skip loading LuaLS completions as lazydev recommends it

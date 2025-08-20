@@ -4,6 +4,7 @@ return {
   'catppuccin/nvim',
   name = 'catppuccin',
   priority = 1000,
+  -- stylua: ignore start
   opts = {
     -- flavour = "macchiato",         -- latte, frappe, macchiato, mocha
     show_end_of_buffer = true,     -- shows the '~' characters after the end of buffers
@@ -24,6 +25,7 @@ return {
       },
     },
   },
+  -- stylua: ignore end
   init = function()
     vim.cmd.colorscheme 'catppuccin'
   end,

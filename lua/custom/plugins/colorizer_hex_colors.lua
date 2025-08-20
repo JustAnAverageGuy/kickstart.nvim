@@ -5,6 +5,7 @@ return {
     -- see :h colorizer.lua
     'norcalli/nvim-colorizer.lua',
     opts = {
+      -- stylua: ignore
       ['css']  = { css = true },
       ['html'] = { css = true },
       'js',

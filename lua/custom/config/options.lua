@@ -1,14 +1,16 @@
+-- stylua: ignore start
+
 -- See `:help vim.o`
 -- - vim.o is a get-set interface for the variables
 -- - vim.opt basically allows treating list style options as
 --   lua tables instead of comma delimited strings
 
 -- set leader and local leader to space
-vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
-vim.g.have_nerd_font = true
+vim.g.mapleader       = ' '
+vim.g.maplocalleader  = ' '
+vim.g.have_nerd_font  = true
 
-vim.o.winborder = 'single'
+vim.o.winborder       = 'single'
 
 -- Set highlight on search
 -- vim.o.hlsearch        = false
@@ -39,7 +41,7 @@ vim.o.updatetime      = 250
 vim.o.timeoutlen      = 300
 
 -- Set completeopt to have a better completion experience
-vim.o.completeopt     = 'menuone,noselect'
+vim.opt.completeopt   = { 'menuone', 'noselect' }
 
 -- NOTE: You should make sure your terminal supports this
 vim.o.termguicolors   = true
@@ -54,3 +56,5 @@ vim.opt.listchars     = { tab = '» ', trail = '·', nbsp = '␣' }
 -- change default splitting directions
 vim.o.splitright      = true
 vim.o.scrolloff       = 10
+
+-- stylua: ignore end

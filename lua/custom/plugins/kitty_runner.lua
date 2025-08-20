@@ -2,6 +2,7 @@
 ---@type LazyPluginSpec
 return {
   'lolpie244/simple-kitty-runner.nvim',
+  -- stylua: ignore start
   opts = {
     runner = {
       default_location = 'after',                       -- default location of runner. Docs: https://sw.kovidgoyal.net/kitty/remote-control/#cmdoption-kitty-launch-location
@@ -18,6 +19,7 @@ return {
     -- NOTE: need to set `allow_remote_control=yes` and `listen_on unix:/tmp/kitty` (or some other path) to kitty.conf
     kitty_listen_on = vim.fn.getenv 'KITTY_LISTEN_ON' , -- socket where kitty is listening. See ssh section
   },
+  -- stylua: ignore end
   cmd = { 'KittyLaunch', 'KittyClear', 'KittyOpenRunner', 'KittySendToRunner' },
   keys = {
     {
