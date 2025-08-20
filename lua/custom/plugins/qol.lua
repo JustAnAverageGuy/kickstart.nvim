@@ -10,7 +10,7 @@ return {
   \__, |\_,_\___/__/__/   |_|_||_\__,_\___|_||_\__|
   |___/                                            
                                                   ]]
-  { 'NMAC427/guess-indent.nvim', opts = {}, },
+  { 'NMAC427/guess-indent.nvim', opts = {} },
 
   --[[
    _ _    _
@@ -35,7 +35,7 @@ return {
           "RainbowViolet",
           "RainbowCyan",
         } ]]
-      }
+      },
     },
   },
   -- "gc" to comment visual regions/lines
@@ -56,9 +56,9 @@ return {
   {
     'rainbowhxch/accelerated-jk.nvim',
     keys = {
-      { 'j', '<Plug>(accelerated_jk_gj)', 'n', desc = "accelerate down" },
-      { 'k', '<Plug>(accelerated_jk_gk)', 'n', desc = "accelerate up" },
-    }
+      { 'j', '<Plug>(accelerated_jk_gj)', 'n', desc = 'accelerate down' },
+      { 'k', '<Plug>(accelerated_jk_gk)', 'n', desc = 'accelerate up' },
+    },
   },
   --[[
     _ _    _ _
@@ -69,10 +69,10 @@ return {
   ]]
   -- TODO: eliminate this, use something like mini.ai instead
   {
-    "Wansmer/sibling-swap.nvim",
-    dependencies = { "nvim-treesitter/nvim-treesitter" },
+    'Wansmer/sibling-swap.nvim',
+    dependencies = { 'nvim-treesitter/nvim-treesitter' },
     opts = {},
-    keys = { "<C-.>", "<C-,>", "<leader>.", "<leader>," },
+    keys = { '<C-.>', '<C-,>', '<leader>.', '<leader>,' },
   },
   --[[
  _        _                _ _ _
@@ -82,9 +82,8 @@ return {
            |_|       |_|
   ]]
   {
-    "anuvyklack/help-vsplit.nvim",
-    opts =
-    {
+    'anuvyklack/help-vsplit.nvim',
+    opts = {
       always = false, -- always open help in vertical split
       side = 'left',  -- 'left' or 'right'
       buftype = { 'help' },
@@ -101,14 +100,14 @@ return {
                     |__/
   ]]
   {
-    "rcarriga/nvim-notify",
+    'rcarriga/nvim-notify',
     config = function()
-      vim.notify = require("notify");
-      require("notify").setup({
-        stages = "fade",
-        background_colour = "#000000",
-      });
-    end
+      vim.notify = require 'notify'
+      require('notify').setup {
+        stages = 'fade',
+        background_colour = '#000000',
+      }
+    end,
   },
   --[[
   -- Better `more` support
@@ -131,7 +130,7 @@ return {
            |___/         
   ]]
   {
-    "j-hui/fidget.nvim",
+    'j-hui/fidget.nvim',
     opts = {
       -- options
     },
@@ -144,8 +143,8 @@ return {
 
   ]]
   {
-    "mbbill/undotree",
-    cmd = { "UndotreeToggle", "UndotreeShow" },
+    'mbbill/undotree',
+    cmd = { 'UndotreeToggle', 'UndotreeShow' },
   },
   --[[
    _       _       ___      _
@@ -155,12 +154,12 @@ return {
 
  ]]
   {
-    "windwp/nvim-autopairs",
+    'windwp/nvim-autopairs',
     -- Optional dependency
-    event = "InsertEnter",
+    event = 'InsertEnter',
     dependencies = { 'hrsh7th/nvim-cmp' },
     opts = {
-      disable_filetype = { "scheme" }, -- handled by nvim_parinfer
+      disable_filetype = { 'scheme' }, -- handled by nvim_parinfer
     },
     --   -- If you want to automatically add `(` after selecting a function or method
     -- config = function()
@@ -181,7 +180,7 @@ return {
                                          |___/     
   ]]
   {
-    "folke/snacks.nvim",
+    'folke/snacks.nvim',
     ---@module 'snacks'
     ---@type snacks.Config
     opts = {
@@ -190,6 +189,6 @@ return {
           inline = false,
         },
       },
-    }
-  }
+    },
+  },
 }

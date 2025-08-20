@@ -41,7 +41,7 @@ return {                -- Useful plugin to show you pending keybinds.
       },
     },
 
-    win = {border = "rounded"},
+    win = { border = 'rounded' },
     -- Document existing key chains
     spec = {
       -- { '<leader>c', group = '[C]ode',     mode = { 'n', 'x' } },
@@ -55,11 +55,11 @@ return {                -- Useful plugin to show you pending keybinds.
   },
   keys = {
     {
-      "<leader>?",
+      '<leader>?',
       function()
-        require("which-key").show({ global = false })
+        require('which-key').show { global = false }
       end,
-      desc = "Buffer Local Keymaps (which-key)",
+      desc = 'Buffer Local Keymaps (which-key)',
     },
   },
 }

@@ -33,10 +33,10 @@ return {
   root_markers = { 'pyproject.toml', 'ruff.toml', '.ruff.toml', '.git' },
   init_options = {
     settings = {
-      configurationPreference = "filesystemFirst",
+      configurationPreference = 'filesystemFirst',
       lint = {
-        ignore = { "E701", "E702" },
+        ignore = { 'E701', 'E702' },
       },
-    }
+    },
   },
 }

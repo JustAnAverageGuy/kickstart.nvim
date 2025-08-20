@@ -1,6 +1,34 @@
 ---@module "lazy"
 ---@type LazyPluginSpec
-return
+return {
+  'catppuccin/nvim',
+  name = 'catppuccin',
+  priority = 1000,
+  opts = {
+    -- flavour = "macchiato",         -- latte, frappe, macchiato, mocha
+    show_end_of_buffer = true,     -- shows the '~' characters after the end of buffers
+    transparent_background = true, -- disables setting the background color.
+    custom_highlights = function(colors)
+      return {
+        -- Comment     = { fg = colors.subtext1 },
+        LineNr      = { fg = colors.yellow, style = { 'bold', 'standout' } },
+        LineNrBelow = { fg = colors.yellow, bg = colors.surface0 },
+        LineNrAbove = { fg = colors.yellow, bg = colors.surface0 },
+      }
+    end,
+    integrations = {
+      indent_blankline = {
+        enabled = true,
+        scope_color = '',
+        colored_indent_levels = true,
+      },
+    },
+  },
+  init = function()
+    vim.cmd.colorscheme 'catppuccin'
+  end,
+}
+
 --[[
 {
     "rebelot/kanagawa.nvim",
@@ -13,35 +41,9 @@ return
     end,
 }
 --]]
-{
-    "catppuccin/nvim",
-    name = "catppuccin",
-    priority = 1000,
-    opts = {
-        -- flavour = "macchiato",     -- latte, frappe, macchiato, mocha
-        show_end_of_buffer = true,     -- shows the '~' characters after the end of buffers
-        transparent_background = true, -- disables setting the background color.
-        custom_highlights = function(colors)
-            return {
-                -- Comment     = { fg = colors.subtext1 },
-                LineNr      = { fg = colors.yellow, style = { "bold", "standout" } },
-                LineNrBelow = { fg = colors.yellow, bg = colors.surface0 },
-                LineNrAbove = { fg = colors.yellow, bg = colors.surface0 },
-            }
-        end,
-        integrations = {
-            indent_blankline = {
-                enabled = true,
-                scope_color = "",
-                colored_indent_levels = true,
-            }
-        },
-    },
-    init = function()
-        vim.cmd.colorscheme "catppuccin"
-    end
-}
+
 --[[
+
   base = "#1e1e2e",
   blue = "#89b4fa",
   crust = "#11111b",

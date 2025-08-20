@@ -1,7 +1,7 @@
 ---@module "lazy"
 ---@type LazyPluginSpec
 return {
-  url = "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
+  url = 'https://git.sr.ht/~whynothugo/lsp_lines.nvim',
   opts = {
     -- default options
     -- box_drawing_characters = {
@@ -14,7 +14,7 @@ return {
     -- },
   },
   config = function(_, opts)
-    vim.diagnostic.config({ virtual_text = false, })
+    vim.diagnostic.config { virtual_text = false }
     require('lsp_lines').setup(opts)
     require('lsp_lines').toggle() -- start off since it is triggered with leader l anyways, which toggles it
   end,
@@ -26,7 +26,7 @@ return {
         require('lsp_lines').toggle()
         -- vim.diagnostic.config({ virtual_text = true, })
       end,
-      desc = "toggle lsp lines"
+      desc = 'toggle lsp lines',
     },
   },
 }

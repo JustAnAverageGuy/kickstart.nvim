@@ -35,7 +35,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
     --  For example, in C this would take you to the header.
     map('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
 
-
     local client = vim.lsp.get_client_by_id(event.data.client_id)
     -- The following code creates a keymap to toggle inlay hints in your
     -- code, if the language server you are using supports them
@@ -48,8 +47,9 @@ vim.api.nvim_create_autocmd('LspAttach', {
     end
     map('<leader>wa', vim.lsp.buf.add_workspace_folder, '[W]orkspace [A]dd Folder')
     map('<leader>wr', vim.lsp.buf.remove_workspace_folder, '[W]orkspace [R]emove Folder')
-    map('<leader>wl', function() print(vim.inspect(vim.lsp.buf.list_workspace_folders())) end,
-      '[W]orkspace [L]ist Folders')
+    map('<leader>wl', function()
+      print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+    end, '[W]orkspace [L]ist Folders')
     -- vim.api.nvim_buf_create_user_command(event.buf, 'Format', function(_) vim.lsp.buf.format() end, { desc = 'Format current buffer with LSP' })
     map('<leader>f', vim.lsp.buf.format, '[F]ormat current buffer with LSP')
   end,
@@ -58,32 +58,26 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 
-capabilities = vim.tbl_deep_extend(
-  'force', capabilities,
-  require('cmp_nvim_lsp').default_capabilities()
-)
-capabilities = vim.tbl_deep_extend(
-  -- using 'error' since cmp_nvim_lsp probably doesnot have workspace rename capabilities
-  -- and even if it does have it, I don't want to unknowingly overwrite them
-  'error', capabilities,
-  require('lsp-file-operations').default_capabilities()
-)
+capabilities = vim.tbl_deep_extend('force', capabilities,        require('cmp_nvim_lsp').default_capabilities())
+capabilities = vim.tbl_deep_extend('error', capabilities, require('lsp-file-operations').default_capabilities())
+-- using 'error' since cmp_nvim_lsp probably doesnot have workspace rename capabilities
+-- and even if it does have it, I don't want to unknowingly overwrite them
 
 vim.lsp.config('*', {
   capabilities = capabilities,
 })
 
 local enabled_servers = {
-  "basedpyright",
-  "clangd",
-  "gopls",
-  "lua_ls",
-  "marksman",
-  "ruff",
-  "ts_ls",
-  -- "carbon",
+  'basedpyright',
+  'clangd',
+  'gopls',
+  'lua_ls',
+  'marksman',
+  'ruff',
+  'ts_ls',
+  -- 'carbon',
 }
 
-vim.lsp.enable(enabled_servers);
+vim.lsp.enable(enabled_servers)
 
 -- vim: ts=2 sts=2 sw=2 fdm=marker fen et

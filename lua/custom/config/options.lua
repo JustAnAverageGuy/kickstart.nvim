@@ -1,6 +1,6 @@
 -- See `:help vim.o`
 -- - vim.o is a get-set interface for the variables
--- - vim.opt basically allows treating list style options as 
+-- - vim.opt basically allows treating list style options as
 --   lua tables instead of comma delimited strings
 
 -- set leader and local leader to space
@@ -48,10 +48,9 @@ vim.o.termguicolors   = true
 vim.o.expandtab       = true
 
 -- render whitespace
-vim.o.list = true
-vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
+vim.o.list            = true
+vim.opt.listchars     = { tab = '» ', trail = '·', nbsp = '␣' }
 
 -- change default splitting directions
-vim.o.splitright = true
-
-vim.o.scrolloff = 10
+vim.o.splitright      = true
+vim.o.scrolloff       = 10

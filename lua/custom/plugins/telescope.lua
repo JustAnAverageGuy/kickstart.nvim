@@ -20,7 +20,7 @@ return {
       end,
     },
     { 'nvim-telescope/telescope-ui-select.nvim' },
-    { "nvim-tree/nvim-web-devicons",            enabled = vim.g.have_nerd_font },
+    { 'nvim-tree/nvim-web-devicons', enabled = vim.g.have_nerd_font },
   },
   config = function()
     require('telescope').setup {
@@ -29,18 +29,18 @@ return {
           i = {
             ['<C-CR>'] = 'to_fuzzy_refine', -- convert a non-fuzzy search to a fuzzy one
           },
-        }
+        },
       },
       pickers = {
         colorscheme = {
           enable_preview = true,
-        }
+        },
       },
       extensions = {
         ['ui-select'] = {
           require('telescope.themes').get_dropdown(),
         },
-      }
+      },
     }
     pcall(require('telescope').load_extension, 'fzf')
     pcall(require('telescope').load_extension, 'ui-select')
@@ -67,7 +67,7 @@ return {
     end, { desc = '[/] Fuzzily search in current buffer' })
 
     vim.keymap.set('n', '<leader>s/', function()
-      builtin.live_grep { grep_open_files = true, prompt_title = 'Live Grep in Open Files', }
+      builtin.live_grep { grep_open_files = true, prompt_title = 'Live Grep in Open Files' }
     end, { desc = '[S]earch [/] in Open Files' })
 
     vim.keymap.set('n', '<leader>sn', function()
@@ -75,24 +75,24 @@ return {
     end, { desc = '[S]earch [N]eovim files' })
 
     vim.keymap.set('n', '<leader>sa', function()
-      builtin.find_files { hidden = true, no_ignore = true, no_ignore_parent = true, }
+      builtin.find_files { hidden = true, no_ignore = true, no_ignore_parent = true }
     end, { desc = '[S]earch [A]ll files in cwd' })
 
     vim.keymap.set('n', '<leader>sF', function()
-      builtin.find_files { cwd = require('telescope.utils').buffer_dir(),  hidden = true,}
+      builtin.find_files { cwd = require('telescope.utils').buffer_dir(), hidden = true }
     end, { desc = "[S]earch [F]iles in buffer's directory" })
 
     -- Custom live_grep function to search in git root
     -- https://github.com/nvim-telescope/telescope.nvim/wiki/Configuration-Recipes/87a4df9f66be884f8cbfb3239c6f70b1f0462460#live-grep-from-project-git-root-with-fallback
     local function live_grep_from_project_git_root()
       local function is_git_repo()
-        vim.fn.system("git rev-parse --is-inside-work-tree")
+        vim.fn.system 'git rev-parse --is-inside-work-tree'
         return vim.v.shell_error == 0
       end
 
       local function get_git_root()
-        local dot_git_path = vim.fn.finddir(".git", ".;")
-        return vim.fn.fnamemodify(dot_git_path, ":h")
+        local dot_git_path = vim.fn.finddir('.git', '.;')
+        return vim.fn.fnamemodify(dot_git_path, ':h')
       end
 
       local opts = {}
@@ -102,12 +102,12 @@ return {
           cwd = get_git_root(),
         }
       else
-        vim.notify("Not a git repo", vim.log.levels.WARN)
+        vim.notify('Not a git repo', vim.log.levels.WARN)
       end
 
-      require("telescope.builtin").live_grep(opts)
+      require('telescope.builtin').live_grep(opts)
     end
 
     vim.keymap.set('n', '<leader>sG', live_grep_from_project_git_root, { desc = '[S]earch by [G]rep on Git Root' })
-  end
+  end,
 }

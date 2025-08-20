@@ -15,7 +15,7 @@ return {
     },
     sections = {
       lualine_c = {
-        {'filename', path = 4},
+        { 'filename', path = 4 },
       },
     },
     extensions = {
@@ -29,12 +29,12 @@ return {
         sections = {
           lualine_b = { vim.b.competitest_title or 'CompetiTest' },
           lualine_y = { 'searchcount' },
-          lualine_z = { "change this sometime" },
+          lualine_z = { 'change this sometime' },
         },
         inactive_sections = {
           lualine_b = { vim.b.competitest_title or 'CompetiTest' },
         },
-      } -- CompetiTest statusline
-    }
+      }, -- CompetiTest statusline
+    },
   },
 }

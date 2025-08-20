@@ -2,12 +2,12 @@
 ---@type LazyPluginSpec | LazyPluginSpec[]
 return {
   {
-    "q60/vim-brainfuck",
-    ft = "brainfuck",
+    'q60/vim-brainfuck',
+    ft = 'brainfuck',
   },
   {
-    "fladson/vim-kitty",
-    ft = "kitty",
+    'fladson/vim-kitty',
+    ft = 'kitty',
   },
   --[[
  __  __          _      _
@@ -17,13 +17,13 @@ return {
 
     ]]
   {
-    "ellisonleao/glow.nvim",
+    'ellisonleao/glow.nvim',
     ---@module 'glow'
     ---@type Config
     opts = {
-      border = "single",
+      border = 'single',
     },
-    cmd = "Glow"
+    cmd = 'Glow',
   },
   {
     'MeanderingProgrammer/render-markdown.nvim',
@@ -45,34 +45,34 @@ return {
         preset = 'round',
         cell = 'trimmed',
       },
-      latex = { enabled = false, },
+      latex = { enabled = false },
       link = {
         custom = {
           wikipedia = { pattern = 'wikipedia%.org', icon = '󰖬 ' },
         },
       },
       heading = {
-        sign = false,
-        border = true,
-        below = "▔",
-        above = "▁",
+        sign     = false,
+        border   = true,
+        below    = '▔',
+        above    = '▁',
         left_pad = 0,
-        position = "inline",
+        position = 'inline',
         icons = {
-          "█ ",
-          "██ ",
-          "███ ",
-          "████ ",
-          "█████ ",
-          "██████ ",
+          '█ ',
+          '██ ',
+          '███ ',
+          '████ ',
+          '█████ ',
+          '██████ ',
         },
       },
       completions = {
         lsp = { enabled = true },
-      }
+      },
     },
-    ft = "markdown",
-    cmd = "RenderMarkdown",
+    ft = 'markdown',
+    cmd = 'RenderMarkdown',
   },
   {
     'opdavies/toggle-checkbox.nvim',
@@ -82,13 +82,12 @@ return {
         function()
           require('toggle-checkbox').toggle()
         end,
-        mode = "n",
-        ft = "markdown",
-        desc = "Toggle checkbox",
-      }
+        mode = 'n',
+        ft = 'markdown',
+        desc = 'Toggle checkbox',
+      },
     },
     ft = { 'markdown' },
-
   },
   --[[
  ___     _
