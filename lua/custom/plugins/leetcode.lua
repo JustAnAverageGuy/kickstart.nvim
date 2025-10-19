@@ -18,13 +18,17 @@ return {
   opts = {
     lang = 'python3',
     arg = leet_arg,
-    storage = { home = vim.fn.getcwd() },
+    -- storage = { home = vim.fn.getcwd() },
+    storage = {
+      home = vim.fn.stdpath("data") .. "/leetcode",
+      cache = vim.fn.stdpath("cache") .. "/leetcode",
+    },
   },
   config = function(_, opts)
     require('leetcode').setup(opts)
     -- a way to set keymaps only when the plugin is loaded
     -- otherwise this keymap interferes with lazy triggers and loads competitest
-    vim.keymap.set('n', '<M-C-B>', '<cmd>Leet test<CR>', { desc = 'leetcode test' })
+    vim.keymap.set('n', '<leader>jj', '<cmd>Leet test<CR>', { desc = 'leetcode test' })
     vim.keymap.set('n', '<M-C-S>', '<cmd>Leet submit<CR>', { desc = 'leetcode submit' })
   end,
 }
