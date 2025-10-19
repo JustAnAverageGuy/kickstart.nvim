@@ -195,7 +195,7 @@
           "",
           "BUFSIZE = 8192",
           "",
-          "",
+          "# boost{{{",
           "class FastIO(IOBase):",
           "    newlines = 0",
           "",
@@ -243,6 +243,7 @@
           "sys.stdin, sys.stdout = IOWrapper(sys.stdin), IOWrapper(sys.stdout)",
           "def input(): return sys.stdin.readline().rstrip('\\r\\n')",
           "",
+          "# }}}",
           "$0"
         ],
         "description": "very_fast_io"
