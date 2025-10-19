@@ -25,6 +25,48 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   pattern = '*',
 })
 
+-- [[ Sort and filter quickfix items ]]
+--
+-- taken from https://vim.fandom.com/wiki/Automatically_sort_Quickfix_list
+-- Converted by chatgpt5
+
+-- Compare quickfix entries by buffer name then line number
+local function compare_qf_entries(a, b)
+  local name_a = vim.fn.bufname(a.bufnr)
+  local name_b = vim.fn.bufname(b.bufnr)
+  if name_a == name_b then
+    return (a.lnum < b.lnum)
+  end
+  return (name_a < name_b)
+end
+
+-- Sort and uniq quickfix list (by buffer name + line number)
+local function sort_uniq_qflist()
+  local qfl = vim.fn.getqflist()
+  table.sort(qfl, compare_qf_entries)
+
+
+  local uniq = {}
+  local last = ''
+  for _, item in ipairs(qfl) do
+    local key = vim.fn.bufname(item.bufnr) .. '\t' .. tostring(item.lnum)
+    if key ~= last then
+      table.insert(uniq, item)
+      last = key
+    end
+  end
+
+  vim.fn.setqflist(uniq)
+end
+
+local sort_qflist_group = vim.api.nvim_create_augroup('SortQuickFix', { clear = true })
+
+vim.api.nvim_create_autocmd('QuickFixCmdPost', {
+  pattern = '*',
+  callback = sort_uniq_qflist,
+  group = sort_qflist_group,
+})
+
 -- [[ Custom Keymaps/Keybinds ]]
 -- vim.keymap.set('i', '<C-s>', '<C-o>:update<CR>', { desc = "Save file with ctrl-s when in insert mode" }) -- ctrl s saves the file in insert mode
 vim.keymap.set({ 'n' }, '<leader>cp', '<cmd>%y+<CR>', { desc = 'Copy file contents to system clipboard' })
