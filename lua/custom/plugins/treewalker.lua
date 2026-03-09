@@ -12,4 +12,5 @@ return {
     { '<Right>', '<cmd>Treewalker Right<CR>', { 'n' }, desc = 'Treewalker right' },
     { '<Left>',  '<cmd>Treewalker Left<CR>',  { 'n' }, desc = 'Treewalker left' },
   },
+  cmd = "Treewalker",
 }

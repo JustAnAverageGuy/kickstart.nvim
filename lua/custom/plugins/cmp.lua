@@ -87,6 +87,7 @@ return {
         { name = 'path' },
         { name = 'render-markdown' },
         -- { name = 'dictionary', keyword_length = 4,  },
+        { name = "neorg" },
       },
     }
   end,
