@@ -1433,7 +1433,7 @@ return {
       'MunifTanjim/nui.nvim',
     },
     keys = {
-      { '\\',         '<cmd>Neotree toggle<cr>', desc = 'NeoTree' },
+      { '<localleader>\\',         '<cmd>Neotree toggle<cr>', desc = 'NeoTree' },
       { '<leader>\\', '<cmd>Neotree reveal<cr>', desc = 'NeoTree show in directory' },
     },
     lazy = false,

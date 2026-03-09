@@ -38,6 +38,10 @@ return {
         paths = { '/usr/share/dict/words' },
         first_case_insensitive = true,
         exact_length = 4,
+        document = {
+          enable = true,
+          command = {"wn", "${label}", "-over"},
+        }
       },
     },
   },
@@ -86,8 +90,8 @@ return {
         { name = 'luasnip' },
         { name = 'path' },
         { name = 'render-markdown' },
-        -- { name = 'dictionary', keyword_length = 4,  },
         { name = "neorg" },
+        { name = 'dictionary', keyword_length = 4,  },
       },
     }
   end,
