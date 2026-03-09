@@ -45,6 +45,11 @@ vim.api.nvim_create_autocmd('LspAttach', {
         vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled { bufnr = event.buf })
       end, '[T]oggle Inlay [H]ints')
     end
+
+    if client and client.server_capabilities.completionProvider then
+      vim.bo[event.buf].omnifunc = "v:lua.vim.lsp.omnifunc"
+    end
+
     map('<leader>wa', vim.lsp.buf.add_workspace_folder, '[W]orkspace [A]dd Folder')
     map('<leader>wr', vim.lsp.buf.remove_workspace_folder, '[W]orkspace [R]emove Folder')
     map('<leader>wl', function()
@@ -77,6 +82,7 @@ local enabled_servers = {
   'ruff',
   'ts_ls',
   -- 'carbon',
+  'prolog_ls', -- https://github.com/jamesnvc/lsp_server
 }
 
 vim.lsp.enable(enabled_servers)
