@@ -2,6 +2,7 @@
 ---@type LazyPluginSpec
 return {
   'nvim-treesitter/nvim-treesitter',
+  branch = 'master',
   build = ':TSUpdate',
   main = 'nvim-treesitter.configs', -- sets up main module such that opts can be directly passed
   opts = {
