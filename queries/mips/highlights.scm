@@ -1,43 +1,81 @@
-;; Highlight directives
-(meta) @keyword
-(attribute) @tag
-
-;; Highlight labels
-(label) @function
-
-;; Highlight opcodes
-(opcode) @function.builtin
-
-;; Highlight registers
-(register) @variable.builtin
-
-;; Highlight macros
+;; Directives
 [
-  (macro)
+  (macro_mnemonic)
+  (integer_mnemonic)
+  (float_mnemonic)
+  (string_mnemonic)
+  (control_mnemonic)
+] @keyword
+
+[
+  (elf_type_tag)
+  (option_flag)
+  (macro_parameter_qualifier)
+] @type
+
+;; Labels & symbols
+[
+  (label)
+  (macro_label)
+  (numeric_label)
+  (symbol)
+] @label
+
+;; Instructions
+(instruction_mnemonic) @function
+(register) @parameter
+
+;; Macros
+(macro_name) @label
+[
   (macro_variable)
-] @tag
+  (string_macro_variable)
+  (macro_parameter_name)
+] @parameter
 
-;; Highlight addresses
-(address) @variable.parameter
-
-;; Highlight primitives
+;; Primitives
 [
-  (char)
-  (float)
   (octal)
+  (binary)
   (decimal)
   (hexadecimal)
 ] @number
+
+(float) @number.float
+(char) @character
 (string) @string
 
-;; Highlight errors
 (ERROR) @error
+(ERROR (_) @error)
 
-;; Highlight comments
-(comment) @comment
-
-; Highlight punctuation
 [
+  (comment)
+] @comment
+
+[
+  "="
   ","
   ";"
 ] @punctuation.delimiter
+
+[
+  "("
+  ")"
+] @punctuation.bracket
+
+[
+  (bitwise_or_operator)
+  (logical_or_operator)
+  (bitwise_and_operator)
+  (logical_and_operator)
+  (bitwise_xor_operator)
+  (relational_operator)
+  (shift_operator)
+  (additive_operator)
+  (multiplicative_operator)
+  (equality_operator)
+  (assignment_operator)
+  (unary_minus_operator)
+  (bitwise_not_operator)
+  (logical_not_operator)
+] @operator

@@ -89,6 +89,7 @@ return {
     parser_config.mips = {
       install_info = {
         url = 'https://github.com/omeyenburg/tree-sitter-mips', -- You can use a local path for url if you prefer
+        -- NOTE: usually I just download the repo and point it to the local one and that actually works, maybe the author fixes it in the future so that directly pulling it from the repo actually works
         branch = 'main',
         files = { 'src/parser.c', 'src/scanner.c' },
         generate_requires_npm = false,
