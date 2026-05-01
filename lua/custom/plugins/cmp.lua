@@ -91,7 +91,7 @@ return {
         { name = 'path' },
         { name = 'render-markdown' },
         { name = "neorg" },
-        { name = 'dictionary', keyword_length = 4,  },
+        { name = 'dictionary', keyword_length = 4, priority = 0.5 },
       },
     }
   end,

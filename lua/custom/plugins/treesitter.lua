@@ -47,6 +47,8 @@ return {
           ['if'] = '@function.inner',
           ['ac'] = '@class.outer',
           ['ic'] = '@class.inner',
+          ['a/'] = '@comment.outer',
+          ['i/'] = '@comment.outer', -- no inner for comments
         },
       },
       move = {
@@ -87,7 +89,7 @@ return {
       install_info = {
         url = 'https://github.com/omeyenburg/tree-sitter-mips', -- You can use a local path for url if you prefer
         branch = 'main',
-        files = { 'src/parser.c' },
+        files = { 'src/parser.c', 'src/scanner.c' },
         generate_requires_npm = false,
         requires_generate_from_grammar = false,
       },
