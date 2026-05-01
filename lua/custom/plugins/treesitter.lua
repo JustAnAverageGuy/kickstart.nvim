@@ -2,30 +2,13 @@
 ---@type LazyPluginSpec
 return {
   'nvim-treesitter/nvim-treesitter',
+  branch = 'main',
   build = ':TSUpdate',
-  main = 'nvim-treesitter.configs', -- sets up main module such that opts can be directly passed
+  lazy = false,
+  -- main = 'nvim-treesitter.configs', -- sets up main module such that opts can be directly passed
+  main = 'nvim-treesitter', -- sets up main module such that opts can be directly passed
   opts = {
-    ensure_installed = {
-      'bash',
-      'c',
-      'diff',
-      'html',
-      'lua',
-      'luadoc',
-      'markdown',
-      'markdown_inline',
-      'latex',
-      'query',
-      'vim',
-      'vimdoc',
-    },
-    -- Autoinstall languages that are not installed
     auto_install = true,
-    highlight = {
-      enable = true,
-      additional_vim_regex_highlighting = { 'ruby' },
-    },
-    indent = { enable = true, disable = { 'ruby' } },
     incremental_selection = {
       enable = true,
       keymaps = {
@@ -82,6 +65,28 @@ return {
       },
     },
   },
+  init = function()
+    -- vim.api.nvim_create_autocmd('FileType', {
+    --   callback = function()
+    --     vim.treesitter.start()
+    --     vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+    --   end
+    -- })
+    require('nvim-treesitter').install({
+      'bash',
+      'c',
+      'diff',
+      'html',
+      'lua',
+      'luadoc',
+      'markdown',
+      'markdown_inline',
+      'latex',
+      'query',
+      'vim',
+      'vimdoc',
+    })
+  end,
   config = function(_, opts)
     ---@class custom_class_name_so_that_you_can_assign_to_the_nips_field_without_warnings_from_luals
     local parser_config = require('nvim-treesitter.parsers').get_parser_configs()
@@ -95,11 +100,14 @@ return {
       },
       filetype = 'mips', -- note: a simple way to automatically set filetype is using modeline; e.g. `# vim: filetype=mips`
     }
-    require('nvim-treesitter.configs').setup(opts)
+    require('nvim-treesitter').setup(opts)
     -- note: also need to do `cp ./queries/* $XDG_CONFIG_HOME/nvim/queries/mips/` to enable highlight
     -- see https://github.com/omeyenburg/tree-sitter-mips
   end,
-  dependencies = {
-    'nvim-treesitter/nvim-treesitter-textobjects',
-  },
+  -- dependencies = {
+  --   {
+  --     'nvim-treesitter/nvim-treesitter-textobjects',
+  --     branch = 'main'
+  --   },
+  -- },
 }

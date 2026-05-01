@@ -65,8 +65,9 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 
 -- stylua: ignore
 capabilities = vim.tbl_deep_extend('force', capabilities,        require('cmp_nvim_lsp').default_capabilities())
-capabilities = vim.tbl_deep_extend('error', capabilities, require('lsp-file-operations').default_capabilities())
--- using 'error' since cmp_nvim_lsp probably doesnot have workspace rename capabilities
+capabilities = vim.tbl_deep_extend('force', capabilities, require('lsp-file-operations').default_capabilities())
+-- ~~using 'error' since cmp_nvim_lsp probably doesnot have workspace rename capabilities~~
+-- ^update: using force only now since the lsp-file-operations does recommend that and actually triggered on nvim 0.12 
 -- and even if it does have it, I don't want to unknowingly overwrite them
 
 vim.lsp.config('*', {
