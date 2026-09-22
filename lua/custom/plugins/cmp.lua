@@ -1,3 +1,18 @@
+local dictionary_options = {
+  paths = { '/usr/share/dict/words' },
+  first_case_insensitive = true,
+  exact_length = 4,
+}
+
+-- WordNet is optional. Without it, dictionary completion still works; only
+-- the documentation pane for a selected dictionary word is omitted.
+if vim.fn.executable 'wn' == 1 then
+  dictionary_options.document = {
+    enable = true,
+    command = { 'wn', '${label}', '-over' },
+  }
+end
+
 ---@module "lazy"
 ---@type LazyPluginSpec
 return {
@@ -19,7 +34,7 @@ return {
         -- Adds a number of user-friendly snippets
         'rafamadriz/friendly-snippets',
         config = function()
-          require('luasnip.loaders.from_vscode').lazy_load { paths = { './snippets' } }
+          require('luasnip.loaders.from_vscode').lazy_load { paths = { vim.fn.stdpath 'config' .. '/snippets' } }
           require('luasnip.loaders.from_vscode').lazy_load()
           require('luasnip').filetype_extend('html', { 'loremipsum' })
           require('luasnip').filetype_extend('markdown', { 'tex' })
@@ -34,15 +49,7 @@ return {
     -- dictionary completion
     {
       'uga-rosa/cmp-dictionary',
-      opts = {
-        paths = { '/usr/share/dict/words' },
-        first_case_insensitive = true,
-        exact_length = 4,
-        document = {
-          enable = true,
-          command = {"wn", "${label}", "-over"},
-        }
-      },
+      opts = dictionary_options,
     },
   },
   config = function()

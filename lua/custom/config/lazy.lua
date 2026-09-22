@@ -1,6 +1,6 @@
 -- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
-if not (vim.uv or vim.loop).fs_stat(lazypath) then
+if not vim.uv.fs_stat(lazypath) then
   local lazyrepo = 'https://github.com/folke/lazy.nvim.git'
   local out = vim.fn.system { 'git', 'clone', '--filter=blob:none', '--branch=stable', lazyrepo, lazypath }
   if vim.v.shell_error ~= 0 then
@@ -25,5 +25,8 @@ require('lazy').setup {
   -- install = { colorscheme = { "habamax" } },
   -- automatically check for plugin updates
   -- checker = { enabled = true },
+  -- Neorg's Lua rocks target the Lua 5.1 ABI used by Neovim/LuaJIT. Keep
+  -- that toolchain isolated instead of replacing the system Homebrew Lua.
+  rocks = { hererocks = true },
   ui = { border = 'single' },
 }

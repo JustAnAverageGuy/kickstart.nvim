@@ -1,12 +1,85 @@
----@module "lazy"
+---@module 'lazy'
 ---@type LazyPluginSpec
 return {
   'nvim-treesitter/nvim-treesitter',
-  branch = 'master',
+  -- The old `master` branch is the frozen Neovim 0.11 implementation. The
+  -- default `main` branch is the supported, rewritten API for Neovim 0.12.
+  branch = 'main',
+  lazy = false,
   build = ':TSUpdate',
-  main = 'nvim-treesitter.configs', -- sets up main module such that opts can be directly passed
-  opts = {
-    ensure_installed = {
+  dependencies = {
+    {
+      'nvim-treesitter/nvim-treesitter-textobjects',
+      branch = 'main',
+      config = function()
+        require('nvim-treesitter-textobjects').setup {
+          select = { lookahead = true },
+          move = { set_jumps = true },
+        }
+
+        local select = require 'nvim-treesitter-textobjects.select'
+        local textobjects = {
+          aa = '@parameter.outer',
+          ia = '@parameter.inner',
+          af = '@function.outer',
+          ['if'] = '@function.inner',
+          ac = '@class.outer',
+          ic = '@class.inner',
+          ['a/'] = '@comment.outer',
+          ['i/'] = '@comment.outer',
+        }
+        for lhs, query in pairs(textobjects) do
+          vim.keymap.set({ 'x', 'o' }, lhs, function()
+            select.select_textobject(query, 'textobjects')
+          end, { desc = 'Select ' .. query })
+        end
+
+        local move = require 'nvim-treesitter-textobjects.move'
+        local movements = {
+          [']m'] = { move.goto_next_start, '@function.outer' },
+          [']]'] = { move.goto_next_start, '@class.outer' },
+          [']M'] = { move.goto_next_end, '@function.outer' },
+          [']['] = { move.goto_next_end, '@class.outer' },
+          ['[m'] = { move.goto_previous_start, '@function.outer' },
+          ['[['] = { move.goto_previous_start, '@class.outer' },
+          ['[M'] = { move.goto_previous_end, '@function.outer' },
+          ['[]'] = { move.goto_previous_end, '@class.outer' },
+        }
+        for lhs, movement in pairs(movements) do
+          vim.keymap.set({ 'n', 'x', 'o' }, lhs, function()
+            movement[1](movement[2], 'textobjects')
+          end, { desc = 'Treesitter textobject movement' })
+        end
+
+        local swap = require 'nvim-treesitter-textobjects.swap'
+        vim.keymap.set('n', '<leader>a', function()
+          swap.swap_next '@parameter.inner'
+        end, { desc = 'Swap with next parameter' })
+        vim.keymap.set('n', '<leader>A', function()
+          swap.swap_previous '@parameter.inner'
+        end, { desc = 'Swap with previous parameter' })
+      end,
+    },
+  },
+  config = function()
+    local treesitter = require 'nvim-treesitter'
+    treesitter.setup {}
+
+    -- Register the custom MIPS parser using the rewritten parser API.
+    vim.api.nvim_create_autocmd('User', {
+      pattern = 'TSUpdate',
+      callback = function()
+        require('nvim-treesitter.parsers').mips = {
+          install_info = {
+            url = 'https://github.com/omeyenburg/tree-sitter-mips',
+            branch = 'main',
+          },
+        }
+      end,
+    })
+    vim.treesitter.language.register('mips', 'mips')
+
+    local parsers = {
       'bash',
       'c',
       'diff',
@@ -19,89 +92,27 @@ return {
       'query',
       'vim',
       'vimdoc',
-    },
-    -- Autoinstall languages that are not installed
-    auto_install = true,
-    highlight = {
-      enable = true,
-      additional_vim_regex_highlighting = { 'ruby' },
-    },
-    indent = { enable = true, disable = { 'ruby' } },
-    incremental_selection = {
-      enable = true,
-      keymaps = {
-        init_selection = '<c-space>',
-        node_incremental = '<c-space>',
-        scope_incremental = '<c-s>',
-        -- node_decremental = '<M-space>', -- alt space doesn't work on this terminal/window manager
-      },
-    },
-    textobjects = {
-      select = {
-        enable = true,
-        lookahead = true, -- Automatically jump forward to textobj, similar to targets.vim
-        keymaps = {
-          -- You can use the capture groups defined in textobjects.scm
-          ['aa'] = '@parameter.outer',
-          ['ia'] = '@parameter.inner',
-          ['af'] = '@function.outer',
-          ['if'] = '@function.inner',
-          ['ac'] = '@class.outer',
-          ['ic'] = '@class.inner',
-          ['a/'] = '@comment.outer',
-          ['i/'] = '@comment.outer', -- no inner for comments
-        },
-      },
-      move = {
-        enable = true,
-        set_jumps = true, -- whether to set jumps in the jumplist
-        goto_next_start = {
-          [']m'] = '@function.outer',
-          [']]'] = '@class.outer',
-        },
-        goto_next_end = {
-          [']M'] = '@function.outer',
-          [']['] = '@class.outer',
-        },
-        goto_previous_start = {
-          ['[m'] = '@function.outer',
-          ['[['] = '@class.outer',
-        },
-        goto_previous_end = {
-          ['[M'] = '@function.outer',
-          ['[]'] = '@class.outer',
-        },
-      },
-      swap = {
-        enable = true,
-        swap_next = {
-          ['<leader>a'] = '@parameter.inner',
-        },
-        swap_previous = {
-          ['<leader>A'] = '@parameter.inner',
-        },
-      },
-    },
-  },
-  config = function(_, opts)
-    ---@class custom_class_name_so_that_you_can_assign_to_the_nips_field_without_warnings_from_luals
-    local parser_config = require('nvim-treesitter.parsers').get_parser_configs()
-    parser_config.mips = {
-      install_info = {
-        url = 'https://github.com/omeyenburg/tree-sitter-mips', -- You can use a local path for url if you prefer
-        -- NOTE: usually I just download the repo and point it to the local one and that actually works, maybe the author fixes it in the future so that directly pulling it from the repo actually works
-        branch = 'main',
-        files = { 'src/parser.c', 'src/scanner.c' },
-        generate_requires_npm = false,
-        requires_generate_from_grammar = false,
-      },
-      filetype = 'mips', -- note: a simple way to automatically set filetype is using modeline; e.g. `# vim: filetype=mips`
     }
-    require('nvim-treesitter.configs').setup(opts)
-    -- note: also need to do `cp ./queries/* $XDG_CONFIG_HOME/nvim/queries/mips/` to enable highlight
-    -- see https://github.com/omeyenburg/tree-sitter-mips
+
+    -- The new installer requires tree-sitter-cli >= 0.26.1. Avoid a noisy
+    -- failed install when only the tree-sitter library is installed.
+    if vim.fn.executable 'tree-sitter' == 1 then
+      treesitter.install(parsers)
+    end
+
+    vim.api.nvim_create_autocmd('FileType', {
+      group = vim.api.nvim_create_augroup('custom-treesitter', { clear = true }),
+      pattern = '*',
+      callback = function(event)
+        local ok = pcall(vim.treesitter.start, event.buf)
+        if ok and vim.bo[event.buf].filetype ~= 'ruby' then
+          vim.bo[event.buf].indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+        end
+      end,
+    })
+
+    -- Neovim 0.12 provides incremental selection as visual-mode `an`/`in`.
+    -- Preserve the old Ctrl-Space gesture for expanding to the parent node.
+    vim.keymap.set('x', '<C-Space>', 'an', { remap = true, desc = 'Expand Treesitter selection' })
   end,
-  dependencies = {
-    'nvim-treesitter/nvim-treesitter-textobjects',
-  },
 }

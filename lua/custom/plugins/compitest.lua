@@ -1,3 +1,5 @@
+local python_template = vim.env.COMPETITEST_PY_TEMPLATE or vim.fn.expand '~/codin/cp/python_template.py'
+
 ---@module "lazy"
 ---@type LazyPluginSpec
 return {
@@ -26,9 +28,7 @@ return {
       return cwd .. '/' .. problem_name_without_spaces .. '.' .. file_extension
     end,
     testcases_directory = './testcases/',
-    template_file = {
-      py = '~/codin/cp/python_template.py',
-    },
+    template_file = vim.fn.filereadable(python_template) == 1 and { py = python_template } or nil,
     evaluate_template_modifiers = true,
     date_format = '%A %d %B %Y %H:%M:%S %z',
     split_ui = {

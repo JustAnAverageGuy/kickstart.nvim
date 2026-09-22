@@ -65,9 +65,10 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 
 -- stylua: ignore
 capabilities = vim.tbl_deep_extend('force', capabilities,        require('cmp_nvim_lsp').default_capabilities())
-capabilities = vim.tbl_deep_extend('error', capabilities, require('lsp-file-operations').default_capabilities())
--- using 'error' since cmp_nvim_lsp probably doesnot have workspace rename capabilities
--- and even if it does have it, I don't want to unknowingly overwrite them
+-- cmp-nvim-lsp now also advertises workspace file-operation capabilities.
+-- An `error` merge therefore fails on duplicate keys (for example
+-- `willRename`) even though both plugins are advertising compatible values.
+capabilities = vim.tbl_deep_extend('force', capabilities, require('lsp-file-operations').default_capabilities())
 
 vim.lsp.config('*', {
   capabilities = capabilities,

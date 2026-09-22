@@ -31,9 +31,9 @@ return {
           will need proper quoting and escaping and other things
         ]]
         local filetype_commands = {
-          ['python'] = 'py %s', -- can be /usr/bin/python3 or something
+          ['python'] = 'python3 %s',
           ['ruby'] = 'ruby %s',
-          ['mips'] = 'mars %s',
+          ['mips'] = (vim.env.MIPS_RUNNER or 'mars') .. ' %s',
           ['go'] = 'go run %s',
         }
         local command = string.format(
