@@ -1,9 +1,14 @@
+local plugin_dir = vim.env.CODEFORCES_SUBMITTER_DIR or vim.fn.expand '~/Tools/codeforces_submitter_vim'
+
 ---@module "lazy"
 ---@type LazyPluginSpec
 return {
   -- "JustAnAverageGuy/CodeForce.vim",
-  dir = '/home/aks/Tools/codeforces_submitter_vim',
+  dir = plugin_dir,
   name = 'codeforces_submitter.vim',
+  enabled = function()
+    return vim.fn.isdirectory(plugin_dir) == 1
+  end,
   dependencies = {
     {
       'rcarriga/nvim-notify',

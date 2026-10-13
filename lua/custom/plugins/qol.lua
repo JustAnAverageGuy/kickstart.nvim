@@ -45,7 +45,7 @@ return {
   / _/ _ \ '  \| '  \/ -_) ' \  _|
   \__\___/_|_|_|_|_|_\___|_||_\__|
                                    ]]
-  { 'numToStr/Comment.nvim', opts = {} },
+  -- { 'numToStr/Comment.nvim', opts = {} },
   --[[
                 _              _
  __ _ __ __ ___| |___ _ _ __ _| |_ ___
@@ -93,7 +93,7 @@ return {
     -- stylua: ignore end
   },
 
-  -- TODO: maybe use mini plugins instead of notify and dressing
+  -- TODO: maybe use mini plugins instead of notify
   --[[
           _   _  __
  _ _  ___| |_(_)/ _|_  _
@@ -110,18 +110,6 @@ return {
         background_colour = '#000000',
       }
     end,
-  },
-  --[[
-  -- Better `more` support
-    _               _
- __| |_ _ ___ _____(_)_ _  __ _
-/ _` | '_/ -_|_-<_-< | ' \/ _` |
-\__,_|_| \___/__/__/_|_||_\__, |
-                          |___/
-  ]]
-  {
-    'stevearc/dressing.nvim',
-    opts = {},
   },
   --[[
   --Progress spinners **
@@ -186,11 +174,15 @@ return {
     ---@module 'snacks'
     ---@type snacks.Config
     opts = {
+      -- dressing.nvim is archived; Snacks is its maintainer-recommended
+      -- replacement for vim.ui.input. Telescope UI Select handles vim.select.
+      input = { enabled = true },
       image = {
         doc = {
           inline = false,
         },
       },
     },
+    priority = 1000,
   },
 }
